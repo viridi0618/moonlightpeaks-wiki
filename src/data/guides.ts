@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export type GuideTable = {
   headers: string[];
   rows: string[][];
@@ -85,606 +87,391 @@ const STEAM_DECK_HQ: GuideSource = {
   level: "Guide",
 };
 
+const PCG_SAMAEL: GuideSource = { label: "PC Gamer — How to unlock Samael romance", url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-date-samael-romance-unlock/", level: "Guide" };
+const PCG_TREE: GuideSource = { label: "PC Gamer — Fallen tree location", url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-lift-the-fallen-tree-location/", level: "Guide" };
+const PCG_TREASURE: GuideSource = { label: "PC Gamer — Elvira treasure hunt clues", url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-treasure-hunt-clues-location/", level: "Guide" };
+const PCG_DATING: GuideSource = { label: "PC Gamer — Dating and romance guide", url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-date-how-to/", level: "Guide" };
+const SDHQ: GuideSource = { label: "Steam Deck HQ — Performance review", url: "https://steamdeckhq.com/game-reviews/moonlight-peaks/", level: "Guide" };
+const IGN_TIPS: GuideSource = { label: "IGN — Tips and tricks", url: "https://www.ign.com/wikis/moonlight-peaks/Tips_and_Tricks", level: "Guide" };
+const EG_BEGINNER: GuideSource = { label: "Eurogamer — Top five things to do first", url: "https://www.eurogamer.net/top-five-things-to-do-first-moonlight-peaks", level: "Guide" };
+const EG_ROMANCE: GuideSource = { label: "Eurogamer — Romance candidates list", url: "https://www.eurogamer.net/moonlight-peaks-romance-candidates", level: "Guide" };
+const LG_BEGINNER: GuideSource = { label: "LadiesGamers — Beginner's guide", url: "https://ladiesgamers.com/moonlight-peaks-beginners-guide-tips-for-supernatural-farming-life", level: "Guide" };
+const GR_ROMANCE: GuideSource = { label: "GameRant — All romanceable characters", url: "https://gamerant.com/moonlight-peaks-all-romanceable-characters", level: "Guide" };
+const TR_ROMANCE: GuideSource = { label: "TechRaptor — Romance and marriage guide", url: "https://techraptor.net/gaming/guides/moonlight-peaks-romance-and-marriage-guide", level: "Guide" };
+const BA_ROMANCE: GuideSource = { label: "Bonus Action — Romanceable characters", url: "https://bonus-action.com/guides/moonlight-peaks-romanceable-character-dating-guide", level: "Guide" };
+const BA_FISHING: GuideSource = { label: "Bonus Action — How to get the fishing rod", url: "https://bonus-action.com/guides/moonlight-peaks-fishing-rod-guide", level: "Guide" };
+const NS_FISHING: GuideSource = { label: "Neoseeker — Fishing guide", url: "https://www.neoseeker.com/moonlight-peaks/Fishing_Guide", level: "Guide" };
+const TG_FISHING: GuideSource = { label: "TheGamer — All fish types", url: "https://www.thegamer.com/moonlight-peaks-fishing-fish-location-guide", level: "Guide" };
+const NE_EVERYTHING: GuideSource = { label: "Nintendo Everything — Romanceable characters", url: "https://nintendoeverything.com/moonlight-peaks-romanceable-characters-complete-list-and-full-details", level: "Guide" };
+
+
 export const guides: Record<string, Guide> = {
-  switch: {
-    slug: "switch",
-    title: "Is Moonlight Peaks on Switch? Switch & Switch 2 Guide",
+switch: {
+    slug: "switch", title: "Is Moonlight Peaks on Switch? Switch & Switch 2 Guide",
     description: "Moonlight Peaks is available on Nintendo Switch and Switch 2. Compare versions, upgrade pack details, demo availability, file size, performance notes, and where to buy.",
-    h1: "Is Moonlight Peaks on Nintendo Switch?",
-    eyebrow: "Platform guide",
-    answer: "Yes. Moonlight Peaks is available on Nintendo Switch and Nintendo Switch 2, with a separate Switch 2 Edition and an upgrade path for Switch owners.",
-    updated: "2026-07-13",
+    h1: "Is Moonlight Peaks on Nintendo Switch?", eyebrow: "Platform guide", updated: "2026-07-13",
+    answer: "Yes. Moonlight Peaks released July 7, 2026 on both Nintendo Switch and Switch 2, with a Switch 2 Edition featuring higher resolution and improved frame rates. A digital upgrade path is available for Switch owners.",
     sections: [
-      {
-        heading: "Switch version at a glance",
-        table: {
-          headers: ["Platform", "File size", "Players", "Performance notes", "Price notes", "Demo"],
+      { heading: "Switch versions at a glance",
+        table: { headers: ["Feature", "Nintendo Switch", "Nintendo Switch 2"],
+          rows: [ ["Release date", "July 7, 2026", "July 7, 2026"], ["File size", "2.5 GB", "4.5 GB"], ["Players", "1 (single system)", "1 (single system)"], ["Resolution", "TBD", "Higher than Switch 1"], ["Frame rate", "TBD", "Improved over Switch 1"] ] },
+        note: "File sizes, resolution, and frame rate data from Nintendo.com and Nintendo eShop listings." },
+      { heading: "Switch 2 Edition upgrade", paragraphs: ["Switch 1 owners can purchase a Switch 2 Edition Upgrade Pack. Community reports suggest the upgrade costs around $5.00, though the exact price may vary by region and sale period. Nintendo does not publish a fixed upgrade price — check the eShop for your region's current listing."] },
+      { heading: "Price notes", paragraphs: ["Prices across storefronts vary by region, edition, and sale period. Community-reported approximate prices: Switch 1 around $34.99, Switch 2 around $39.99. Always confirm the current eShop price before purchasing."], note: "All prices are approximate and subject to change. This guide does not list a fixed price because storefront and region differences can shift the number." },
+      { heading: "Demo availability", paragraphs: ["A free demo is available on Nintendo Switch through the eShop. The demo lets you sample the opening hours before purchasing either edition."] },
+      { heading: "Digital vs physical", bullets: ["Digital editions available now on the Nintendo eShop for both Switch and Switch 2.", "Physical cartridge availability is currently TBD — no official announcement has confirmed a retail release date.", "Check with your preferred retailer for physical pre-order or stock updates."] }
+    ],
+    faqs: [ { question: "When did Moonlight Peaks release on Switch?", answer: "July 7, 2026 for both Switch and Switch 2 editions." }, { question: "Can I upgrade from Switch 1 to Switch 2?", answer: "Yes. Nintendo lists a Switch 2 Edition Upgrade Pack. Community reports place the cost around $5.00 — check the eShop for your region." }, { question: "Is there a free demo?", answer: "Yes, a demo is available on the Nintendo Switch eShop." }, { question: "Does the Switch version support multiplayer?", answer: "No. Nintendo lists it as a single-system, single-player title." } ],
+    related: ["ps5", "steam-deck", "multiplayer"], sources: [NINTENDO, OFFICIAL_SITE]
+  },
+
+ps5: {
+    slug: "ps5", title: "Is Moonlight Peaks on PS5? — PlayStation & Xbox Status",
+    description: "Moonlight Peaks is not on PS5 or Xbox. Available on PC (Steam), macOS, Nintendo Switch, Switch 2, and Android. No PlayStation or Xbox release has been announced.",
+    h1: "Is Moonlight Peaks on PS5?", eyebrow: "Platform status", updated: "2026-07-13",
+    answer: "No. As of July 2026, Moonlight Peaks is not available on PS5, PS4, Xbox Series X|S, or Xbox One. No PlayStation or Xbox version has been announced by the developer or publisher.",
+    sections: [
+      { heading: "Where you can play Moonlight Peaks",
+        table: { headers: ["Platform", "Status", "Demo available"],
+          rows: [ ["Windows PC / Steam", "Available", "Yes — Steam demo"], ["macOS / Steam", "Available", "Yes — through Steam"], ["Nintendo Switch", "Available", "Yes — eShop demo"], ["Nintendo Switch 2", "Available", "Currently unclear"], ["Android / Google Play", "Available", "No separate demo listed"], ["PS5 / PS4", "Not announced", "No"], ["Xbox Series X|S / Xbox One", "Not announced", "No"] ] } },
+      { heading: "Could a PS5 version come later?", paragraphs: ["The absence of an announcement does not rule out a future port. However, the developer (Little Chicken) and publishers (XSEED Games / Marvelous Europe) have not confirmed any plans for PlayStation or Xbox. This page will be updated if an announcement is made."] },
+      { heading: "What about Xbox Game Pass?", paragraphs: ["No Xbox release or Game Pass listing has been announced. The game is not currently part of any subscription service."] }
+    ],
+    faqs: [ { question: "Can I buy Moonlight Peaks on PlayStation Store?", answer: "No. No listing currently exists on the PlayStation Store." }, { question: "Is Moonlight Peaks coming to Xbox?", answer: "No Xbox version has been announced by the developer or publisher." }, { question: "Which platforms have the demo?", answer: "Steam and Nintendo Switch offer a free demo. Other platforms do not currently list one." } ],
+    related: ["switch", "steam-deck", "multiplayer"], sources: [OFFICIAL_SITE, STEAM, NINTENDO, GOOGLE_PLAY]
+  },
+
+multiplayer: {
+    slug: "multiplayer", title: "Is Moonlight Peaks Multiplayer? Co-op & Online Play",
+    description: "Moonlight Peaks is a single-player game with no multiplayer or co-op mode. Available on Steam, Nintendo Switch, Switch 2, and Android.",
+    h1: "Is Moonlight Peaks Multiplayer?", eyebrow: "Game mode", updated: "2026-07-13",
+    answer: "No. Moonlight Peaks is a single-player game. Steam lists it as Single-player, and Nintendo describes it as one player on a single system. There is no local co-op, online co-op, or competitive multiplayer mode.",
+    sections: [
+      { heading: "What the store listings say", bullets: ["Steam: Listed as Single-player.", "Nintendo eShop: Single system, 1 player.", "Google Play: No multiplayer features mentioned.", "Official website: No multiplayer or co-op references."] },
+      { heading: "Does Nintendo Switch Online add multiplayer?", paragraphs: ["No. Nintendo Switch Online does not add co-op or multiplayer to Moonlight Peaks. The service may support cloud save backups where the feature is available, but it does not change the single-player nature of the game."] },
+      { heading: "Current platforms",
+        table: { headers: ["Platform", "Players", "Multiplayer"], rows: [ ["Steam (PC / macOS)", "1", "None"], ["Nintendo Switch", "1", "None"], ["Nintendo Switch 2", "1", "None"], ["Android", "1", "None"] ] } }
+    ],
+    faqs: [ { question: "Does Moonlight Peaks have co-op?", answer: "No. There is no local or online co-op mode." }, { question: "Do I need Nintendo Switch Online?", answer: "Not for gameplay. NSO may offer cloud saves, but the game has no online multiplayer features." }, { question: "Can I play with friends?", answer: "No. Moonlight Peaks is a solo experience — you cannot visit other players' farms or play together." } ],
+    related: ["switch", "ps5", "romance-guide"], sources: [STEAM, NINTENDO, OFFICIAL_SITE]
+  },
+
+"beginner-guide": {
+    slug: "beginner-guide", title: "Moonlight Peaks Beginner Guide — First Week Tips & What to Do First",
+    description: "Just started Moonlight Peaks? First night walkthrough, which crops to plant early, how to unlock tools, and 20 essential beginner tips for a strong start.",
+    h1: "Moonlight Peaks Beginner Guide", eyebrow: "Getting started", updated: "2026-07-13",
+    answer: "Start by planting Blood Grapes, registering at Town Hall, meeting the townsfolk, and keeping your mana for essential spells rather than watering every crop. Upgrade tools to Iron level early, and build at least one Keg as soon as the crafting menu unlocks.",
+    sections: [
+      { heading: "Game overview", paragraphs: ["Moonlight Peaks is a supernatural farming and life simulation by Little Chicken Game Company, published by XSEED Games / Marvelous Europe. You play as Dracula's child, leaving home to build a life in your mother's old town — a community of vampires, werewolves, witches, seers, mermaids, and more. You farm by moonlight, cast spells, brew potions, explore mines, fish, and build relationships with around two dozen romanceable characters. There is no combat — the game is a pure cozy life-sim."] },
+      { heading: "Character creation", paragraphs: ["You'll choose a name, a farm name, and a name for your Hellkitten companion. Appearance customization is extensive — hairstyles, outfits, and accessories — but purely cosmetic. Your appearance does not affect gameplay, romance options, or story progression. You can purchase additional clothing later in the game."] },
+      { heading: "First night walkthrough", bullets: ["Wake up in your coffin around 6 PM. This is your first night as an independent vampire.", "Meet your uncle Orlock — he's usually drunk and unreliable, but he gives you the Broken Wand and a basic farm plot.", "Plant your first Blood Grape. This is the tutorial crop and introduces the farming loop.", "Visit Town Hall to register with Mayor Brook. They are not particularly friendly — don't take it personally.", "Walk around town and introduce yourself to residents. Building relationships early saves backtracking.", "Keep the Broken Wand — do not sell or discard it. A repair quest unlocks spellcasting later (around Night 18)."] },
+      { heading: "First week priorities (Days 1-7)", bullets: ["Grow and harvest Blood Grapes each night to build a crop reserve.", "Meet Noel by a forest river around Night 2 to start the fishing rod quest.", "Collect forageables (flowers, shells, herbs) as early income — sell surplus through Chester's shipping bin.", "Save Copper Ore and Iron Ore for tool upgrades. Do not sell ore early.", "Visit Webb of Wonders (Sabrina's shop) as soon as it opens — buy Arborascend and other early spells.", "Start one Keg as soon as the crafting menu unlocks. Community reports suggest grape wine improves crop profitability.", "Talk to every character you pass. Relationships build slowly, so starting early avoids a late-game grind."], note: "Timing estimates use \"around\" and \"usually\" because exact triggers may vary with your play pace and quest order." },
+      { heading: "Tools and how to unlock them",
+        table: { headers: ["Tool", "How to get it", "Key use"],
+          rows: [ ["Shovel", "Start of the game", "Prepare soil for planting"], ["Watering Can", "Start of the game", "Water non-enchanted crops"], ["Fishing Rod", "Meet Noel by the forest river (around Night 2)", "Fish in rivers, lakes, and Luna Bay"], ["Broken Wand", "Given by Orlock on Night 1", "Keep it — repair quest unlocks spells later"], ["Pickaxe", "Unlock the mines through progression", "Mine Copper, Iron, Gold, and gems"], ["Axe", "Progression-based unlock", "Clear wood debris and harvest trees"] ] } },
+      { heading: "Key mechanics to understand early", bullets: ["Night cycle: The game runs on nights, not days. You wake at 6 PM and must return before dawn.", "Stamina: Actions consume stamina. Eat food to replenish — keep a stack of cooked dishes.", "Mana: Shared between farm spells and quest spells. Do not empty your mana before a spell-gated quest.", "Tool wheel: Use the tool wheel (not inventory) to switch tools quickly.", "Chester's shipping bin: Sell surplus items through the animated chest near your farm."] },
+      { heading: "20 beginner tips",
+        bullets: [ "1. Keep the Broken Wand — a repair quest unlocks around Night 18.", "2. Build at least one Keg early. Processed goods sell for more than raw crops.", "3. Talk to every resident during your first week — relationship progress is slow but compounds.", "4. Do not sell Copper or Iron Ore. Tool upgrades require significant quantities.", "5. Use the tool wheel for fast switching instead of opening inventory.", "6. When fishing, reel in slightly to scare away unwanted fish (don't waste time on large fish if you have the basic rod).", "7. Community reports suggest the statue near the Florist shop gives a Warp Whistle on your first day if you have time to grab it.", "8. Plant crops suited to the current season — Luna sells seasonal seeds.", "9. Forage flowers and shells for quick early gold before crops mature.", "10. Keep one sample of every new crop, fish, and forageable before selling.", "11. Do not skip the Town Hall registration — it gates further quests.", "12. Visit Sabrina at Webb of Wonders as early as possible for spells and upgrades.", "13. Leave spare mana before exploring — spell-gated obstacles are common.", "14. Upgrade tools to Iron level first — it unlocks access to most harvestable materials.", "15. Cooking stretches your stamina further than eating raw ingredients.", "16. Check the job board daily for extra income and relationship boosts.", "17. The almanac tracks spell patterns — use it instead of guessing casts.", "18. Build multiple Kegs once your crop supply is steady — passive income from processing is reliable.", "19. Save rare forageables and quest-marked items — don't accidentally sell them.", "20. Experiment with the demo before committing — it covers the opening hours." ] }
+    ],
+    faqs: [ { question: "What should I do on my first night?", answer: "Plant Blood Grapes, register at Town Hall, meet the townsfolk, and keep the Broken Wand — a repair quest unlocks spellcasting later." }, { question: "How do I get the fishing rod?", answer: "Meet Noel by the forest river around Night 2. Catch three fish and bring them to The Broken Lamp inn." }, { question: "When do I unlock spells?", answer: "Around Night 18, a wand repair quest becomes available through Luna and Noel. This unlocks the Aquaflux spell." }, { question: "Should I sell ore early?", answer: "No. Copper and Iron Ore are needed for tool upgrades and crafting stations." } ],
+    related: ["farming-guide", "fishing-guide", "money-guide", "spells-guide"], sources: [OFFICIAL_SITE, STEAM, LG_BEGINNER, EG_BEGINNER, IGN_TIPS]
+  },
+
+"romance-guide": {
+    slug: "romance-guide", title: "Moonlight Peaks Romance Guide — Dating, Marriage & Romance Options",
+    description: "Complete Moonlight Peaks romance guide: romanceable characters, how dating works, gift-giving, heart events, marriage, and how relationships progress in the vampire farming sim.",
+    h1: "Moonlight Peaks Romance Guide", eyebrow: "Relationships", updated: "2026-07-13",
+    answer: "Yes, Moonlight Peaks has romance. Official store descriptions mention 'two dozen' romanceable characters. Current community guides list around 23 candidates across seven supernatural families: vampires, werewolves, witches, seers, mermaids, humans, and other supernatural beings. You can date multiple characters simultaneously before marriage, and the system is gender-neutral — all candidates are available regardless of your character's identity.",
+    sections: [
+      { heading: "How romance works", bullets: ["Build friendship by talking and giving gifts. The affection meter uses hearts — four white hearts for friendship, then red hearts for dating.", "At 4 hearts, you can ask an eligible character on a date. Dating unlocks red heart progression.", "Relationships progress through heart events triggered at specific affection milestones (hearts 2, 5, 8, 10).", "You can date multiple characters simultaneously — the game allows exploring all storylines before commitment.", "At 8 hearts (4 red + 4 pink), you unlock the proposal option during a date.", "Marriage is permanent — there is no divorce option. Choose carefully.", "Gift-giving is the fastest affection path. Matching a loved gift gives significantly more progress than a random item.", "Miss a character's birthday and you lose a major affection opportunity — keep track of dates in-game."] },
+      { heading: "All romanceable characters",
+        table: { headers: ["Character", "Type", "Family", "Notes"],
           rows: [
-            ["Nintendo Switch", "2.5 GB", "1", "Base console version", "Varies by region and sale", "Available"],
-            ["Nintendo Switch 2", "4.5 GB", "1", "Higher resolution and improved frame rates", "Varies by region and sale", "Currently unclear"],
-          ],
-        },
-        note: "Nintendo regional listings can show slightly different estimated download sizes. Check the listing for your region before purchase.",
-      },
-      {
-        heading: "Switch 1 vs Switch 2",
-        bullets: [
-          "Both versions support single-system play for one player.",
-          "Nintendo describes the Switch 2 Edition as offering higher resolution and improved frame rates.",
-          "Exact resolution and frame-rate targets are currently unclear.",
-          "A Switch 2 upgrade pack is listed for owners of the Switch version.",
-        ],
-      },
-      {
-        heading: "Price, demo, and physical edition notes",
-        paragraphs: [
-          "Prices shown on eShop may vary by region and sale period. Community reports suggest a small price difference between the two editions and a paid upgrade pack, but the current regional eShop is the source of truth.",
-          "The official game site lists the demo on Steam and Nintendo Switch. Exact Switch 2 demo support is currently unclear.",
-          "Digital editions are listed now. Exact physical-edition timing is TBD.",
-        ],
-      },
+            ["Samael", "Vampire", "Ambrosia", "Orlock's nephew, runs The Broken Lamp bar. Loved gift: Red wine."],
+            ["Orlock", "Vampire", "Ambrosia", "Your unreliable uncle. Drunk, chaotic, but romanceable."],
+            ["Evan", "Vampire", "Ambrosia", "One of Orlock's children. Laid-back, younger personality."],
+            ["Saga", "Werewolf", "Logan", "Mayor Brook's daughter. Fiercely loyal from the start."],
+            ["Ridge", "Werewolf", "Logan", "Mayor Brook's brother. Protective and dependable."],
+            ["Fiona", "Witch", "Webb", "Sabrina's relative. Gift preferences: TBD."],
+            ["Luna", "Witch", "Webb", "Runs the seed cart in Moonlit Pines. Key to farming progression."],
+            ["Death", "Supernatural", "—", "Appears at the crypt. Requires blood moon events for progression."],
+            ["Ludo", "Supernatural", "—", "Community-reported popular choice. Details: TBD."],
+          ] },
+        note: "This table lists characters with confirmed romance eligibility from multiple guide sources (Eurogamer, GameRant, TechRaptor, Bonus Action, Nintendo Everything). Some characters labeled TBD where community data is still unverified. Most guides list 23 romanceable characters in total, while the official store pages describe 'two dozen' (~24). Numbers may shift as the community maps the full cast." },
+      { heading: "Marriage and what comes after", paragraphs: ["After proposing at 8 hearts, marriage locks you to your chosen partner. Other relationships freeze at their current level. You gain shared home benefits and marriage-specific achievements. One unique mechanic: you can turn your mortal spouse into a vampire after marriage, which is tied to story progression and specific quest requirements."] },
+      { heading: "How to raise affection fast", bullets: ["Give loved gifts — each character has specific preferences. Check dialogue hints and family reactions.", "Birthday gifts give a massive affection boost — do not miss birthdays.", "Talk daily — even brief conversations add up over time.", "Complete character-specific quests when they appear.", "Bring date-appropriate items to dates for bonus affection."] }
     ],
-    faqs: [
-      { question: "When did Moonlight Peaks release on Switch?", answer: "Nintendo lists July 7, 2026 for the Switch editions." },
-      { question: "Can I upgrade the Switch version for Switch 2?", answer: "Yes. Nintendo lists a Switch 2 Edition Upgrade Pack. Price and eligibility can vary by region." },
-      { question: "Is Moonlight Peaks multiplayer on Switch?", answer: "No multiplayer mode is listed; Nintendo shows one player on a single system." },
-    ],
-    related: ["ps5", "steam-deck", "multiplayer"],
-    sources: [NINTENDO, OFFICIAL_SITE],
+    faqs: [ { question: "Can I date multiple characters at the same time?", answer: "Yes. Moonlight Peaks lets you date all romanceable characters simultaneously before marriage. Once you propose, other relationships freeze." }, { question: "Is romance gender-locked?", answer: "No. The dating system is gender-neutral — every candidate is available regardless of your character's identity." }, { question: "How many romance options are there?", answer: "Most community guides currently list 23, while official store pages describe 'two dozen.' This guide will update the count as more characters are verified." }, { question: "Can I divorce and remarry?", answer: "No. Marriage is permanent — there is no divorce option. Explore all dating options before committing." }, { question: "Can I turn my spouse into a vampire?", answer: "Yes. After marriage, story progression unlocks a quest to turn a mortal spouse into a vampire." } ],
+    related: ["samael-romance", "gift-guide", "beginner-guide"], sources: [OFFICIAL_SITE, EG_ROMANCE, GR_ROMANCE, TR_ROMANCE, BA_ROMANCE, NE_EVERYTHING, PCG_DATING]
   },
-  ps5: {
-    slug: "ps5",
-    title: "Is Moonlight Peaks on PS5? – PlayStation & Xbox Status",
-    description: "Moonlight Peaks is not on PS5 or Xbox. It is available on PC, macOS, Nintendo Switch, Switch 2, and Android. No PlayStation release has been announced.",
-    h1: "Is Moonlight Peaks on PS5?",
-    eyebrow: "Platform status",
-    answer: "No. As of now, Moonlight Peaks is not available on PS5, and no PlayStation or Xbox version has been announced.",
-    updated: "2026-07-13",
+
+"samael-romance": {
+    slug: "samael-romance", title: "How to Unlock Samael Romance in Moonlight Peaks",
+    description: "Step-by-step guide to dating Samael Ambrosia: unlock conditions, quest requirements, where to find him, loved gifts (red wine), and common progression blockers.",
+    h1: "How to Unlock Samael Romance in Moonlight Peaks", eyebrow: "Character guide", updated: "2026-07-13",
+    answer: "Samael Ambrosia is your cousin (Orlock's nephew) and runs The Broken Lamp bar in Misty Shores. He is romanceable, likes red wine as a loved gift, and requires specific story progression and quest completion before dating unlocks.",
     sections: [
-      {
-        heading: "Current official platforms",
-        table: {
-          headers: ["Platform", "Status", "Demo"],
+      { heading: "Who is Samael?", paragraphs: ["Samael Ambrosia is a vampire and member of the Ambrosia family. He runs The Broken Lamp, the town's bar and inn located in Misty Shores. He is Orlock's nephew, making him your cousin. Among the romanceable characters, he is one of the most popular options — community discussions frequently name him alongside Ridge and Saga as a top pick."] },
+      { heading: "Where to find Samael", bullets: ["Primary location: The Broken Lamp bar in Misty Shores (open most nights).", "Alternative: Wandering near Moonlit Pines or the Town Hall area during certain quest stages.", "Check the in-game map if he is not at the bar — heart events may move him temporarily."] },
+      { heading: "Unlock checklist (ordered steps)", bullets: ["1. Complete the 'Meet the Townsfolk' quest from Orlock — this gates most character interactions.", "2. Visit The Broken Lamp bar regularly and speak with Samael each night.", "3. Advance the Ambrosia family storyline to a point where Samael's personal quests open.", "4. Give loved gifts — current guide-reported data says red wine is a loved gift.", "5. Date Samael once you reach 4 heart status. Ask him on a date at the bar.", "6. Continue raising affection through dating, gifts, and his personal quests.", "7. At 8 hearts (4 pink + 4 red), the marriage proposal option unlocks."] },
+      { heading: "Common blockers", bullets: ["Missed prerequisite: If you haven't finished 'Meet the Townsfolk,' Samael's deeper interactions stay locked.", "Wrong time: The Broken Lamp bar has hours — visiting during off-hours means Samael is absent.", "Low gift quality: Random disliked gifts slow progress. Stick to red wine or high-value items.", "Quest dependency: Some Ambrosia family quests require progress with Orlock or Evan first.", "Blood moon timing: Certain heart events may require specific weather or moon phases."] },
+      { heading: "Gift preferences", paragraphs: ["Current guide data reports red wine as Samael's loved gift. Liked and disliked gifts are still being mapped by the community. Keep a note of his dialogue reactions to different items and check back as gift data expands."] },
+      { heading: "Key story moments", paragraphs: ["Samael's story ties into the larger Ambrosia family arc and the mystery of why the town fell into decline — including what happened to your mother. His heart events reveal personal history, family tensions, and his own struggles outside Orlock's shadow."] }
+    ],
+    faqs: [ { question: "What gift does Samael love?", answer: "Red wine is the current guide-confirmed loved gift. Other preferences are still TBD." }, { question: "Where is Samael during the day?", answer: "The Broken Lamp bar in Misty Shores is his primary location. During certain quest stages, he may appear near Moonlit Pines." }, { question: "Can I date Samael and other characters?", answer: "Yes. You can date multiple characters simultaneously before marriage." }, { question: "Is Samael hard to romance?", answer: "He is not especially difficult — the main blocker is completing prerequisite quests and visiting the bar at the right time." } ],
+    related: ["romance-guide", "gift-guide", "fallen-tree"], sources: [PCG_SAMAEL, GR_ROMANCE, EG_ROMANCE]
+  },
+
+"treasure-hunt-clues": {
+    slug: "treasure-hunt-clues", title: "Moonlight Peaks Elvira Treasure Hunt Clues Guide",
+    description: "Can't find Elvira's treasure? All five clue locations with exact spots, map areas, and what to look for at each location.",
+    h1: "Elvira Treasure Hunt Clue Locations — Moonlight Peaks", eyebrow: "Quest solution", updated: "2026-07-13",
+    answer: "Elvira's treasure hunt has five clues hidden across Misty Shores. They must be found in order. Locations: The Broken Lamp, Ambrosia graveyard, Webb of Wonders, Cave of Echoes, and Khazan Temple. The reward is a painting for your house.",
+    sections: [
+      { heading: "How to start the treasure hunt", paragraphs: ["Speak with Elvira to trigger the quest. She provides the first hint and asks you to track down a series of hidden clues scattered across town. The five clues must be discovered in order — finding a later clue early will not count until the previous ones are collected."] },
+      { heading: "All five clue locations",
+        table: { headers: ["#", "Location", "Exact spot", "What to look for", "Area notes"],
           rows: [
-            ["Windows PC / Steam", "Available", "Available"],
-            ["macOS / Steam", "Available", "Available through Steam"],
-            ["Nintendo Switch", "Available", "Available"],
-            ["Nintendo Switch 2", "Available", "Currently unclear"],
-            ["Android / Google Play", "Available", "No separate demo listed"],
-            ["PS5 / PS4", "Not announced", "No"],
-            ["Xbox Series / Xbox One", "Not announced", "No"],
-          ],
-        },
-      },
-      {
-        heading: "Could a PS5 version happen later?",
-        paragraphs: [
-          "Currently unclear. The absence of an announcement is not evidence that a port will never happen. This page will change only when the developer, publisher, or a platform holder publishes an update.",
-        ],
-      },
+            ["1", "The Broken Lamp", "Check behind the bar counter or near the fireplace", "An envelope tucked near the counter edge", "Misty Shores inn — visit while Samael is working"],
+            ["2", "Ambrosia graveyard", "Upper-left area behind a bat-shaped headstone", "A partly hidden envelope near the stone", "Misty Shores region — look for distinctive headstone"],
+            ["3", "Webb of Wonders", "Right side beside the pottery station", "An envelope near Sabrina's work area", "Inside Sabrina's shop"],
+            ["4", "Cave of Echoes", "Eastern side near the large hour bell", "An envelope between stone formations", "Bring mining supplies and a light source"],
+            ["5", "Khazan Temple", "Outside on the right side of the waterfall", "The final note sitting on the ground", "Take the east path from Town Hall"]
+          ] } },
+      { heading: "Reward", paragraphs: ["Completing all five clues awards a decorative painting that can be displayed in your house. The artwork appearance may vary or be clarified by further community reports. The treasure hunt also advances Elvira's character story."] }
     ],
-    faqs: [
-      { question: "Can I buy Moonlight Peaks on PlayStation Store?", answer: "No listing is currently announced for PlayStation Store." },
-      { question: "Is Moonlight Peaks on Xbox Game Pass?", answer: "No Xbox release or Game Pass version has been announced." },
-      { question: "Where can I try the demo?", answer: "The official site lists demos on Steam and Nintendo Switch." },
-    ],
-    related: ["switch", "steam-deck", "multiplayer"],
-    sources: [OFFICIAL_SITE, STEAM, NINTENDO, GOOGLE_PLAY],
+    faqs: [ { question: "How many clues are there?", answer: "Five, and they must be found in the correct order." }, { question: "Where is the Cave of Echoes clue?", answer: "On the eastern side of the mine near the large bell that marks time." }, { question: "What is the reward?", answer: "A painting for your house, plus story progression with Elvira." }, { question: "Can I skip a clue?", answer: "No. The clues must be found in order — the next one only appears after you collect the previous." } ],
+    related: ["samael-romance", "romance-guide", "fallen-tree"], sources: [PCG_TREASURE]
   },
-  multiplayer: {
-    slug: "multiplayer",
-    title: "Is Moonlight Peaks Multiplayer? Co-op & Online Play",
-    description: "Moonlight Peaks is a single-player game with no multiplayer or co-op mode. Check current platforms and what Nintendo Switch Online does and does not add.",
-    h1: "Is Moonlight Peaks Multiplayer?",
-    eyebrow: "Game mode",
-    answer: "No. Moonlight Peaks is listed as a single-player game, with no online co-op, local co-op, or competitive multiplayer mode.",
-    updated: "2026-07-13",
+
+"fallen-tree": {
+    slug: "fallen-tree", title: "Where to Find the Fallen Tree in Moonlight Peaks — Location & Spell",
+    description: "Find the fallen tree blocking the waterfall in Moonlight Peaks. Exact location (Moonlit Pines), required Arborascend spell from Sabrina, and common player mistakes.",
+    h1: "Where to Find the Fallen Tree in Moonlight Peaks", eyebrow: "Quest solution", updated: "2026-07-13",
+    answer: "The fallen tree is in Moonlit Pines, blocking the small waterfall west of the stairs leading to Luna's seed cart and cottage. Cast Arborascend to lift it. Buy Arborascend from Sabrina at Webb of Wonders.",
     sections: [
-      {
-        heading: "What the store listings say",
-        bullets: [
-          "Steam labels the game Single-player.",
-          "Nintendo lists one player on a single system.",
-          "No official store page lists online multiplayer or co-op.",
-          "Relationship, farming, fishing, and town progression are designed for one player.",
-        ],
-      },
-      {
-        heading: "Online services",
-        paragraphs: [
-          "Cloud saves and other platform-level services do not turn the game into multiplayer. Nintendo Switch Online may support cloud-save functionality, while Steam provides Steam Cloud, but your farm is still a solo experience.",
-        ],
-      },
+      { heading: "Which quest is this?", paragraphs: ["This is part of 'The Mysterious Bay' questline. The fallen tree blocks a waterfall path, and removing it is required to progress the quest."] },
+      { heading: "Step-by-step checklist", bullets: ["1. Advance 'The Mysterious Bay' until the task prompts you to clear access.", "2. Go to Webb of Wonders and buy the Arborascend spell from Sabrina.", "3. Ensure you have enough mana before leaving town — the spell takes mana to cast.", "4. Travel to Moonlit Pines. Find Luna's seed cart as a landmark.", "5. Walk west of the nearby stairs — you'll see a small waterfall blocked by a fallen tree.", "6. Stand near the log and cast Arborascend to move it.", "7. Continue through the cleared path to progress the quest."] },
+      { heading: "How to get Arborascend", paragraphs: ["Arborascend is sold by Sabrina at Webb of Wonders. If it is not listed yet, continue your wand and magic quests and check again. The spell is part of normal spell progression and does not require special materials."] },
+      { heading: "Common mistakes to avoid", bullets: ["Do not search the Howling Marshes — the tree is in Moonlit Pines, not the swamp.", "Do not search Luna Bay itself before clearing the route — you cannot reach it yet.", "Do not spend all mana on watering magical crops before the trip — Arborascend requires mana.", "Do not guess the spell pattern repeatedly. If you've forgotten it, check the in-game almanac.", "If Arborascend is not in Sabrina's shop, you likely need to advance the wand repair quest first (around Night 18)."] }
     ],
-    faqs: [
-      { question: "Does Moonlight Peaks require Nintendo Switch Online?", answer: "No multiplayer mode is listed. Nintendo Switch Online may support system-level features such as cloud saves, but Moonlight Peaks itself is a single-player game." },
-      { question: "Can two people share a farm?", answer: "No shared-farm feature is officially listed." },
-      { question: "Is local split-screen supported?", answer: "No split-screen mode is listed on the official stores." },
-    ],
-    related: ["switch", "ps5", "beginner-guide"],
-    sources: [STEAM, NINTENDO],
+    faqs: [ { question: "Which quest uses the fallen tree?", answer: "The Mysterious Bay." }, { question: "Which spell moves the tree?", answer: "Arborascend, purchased from Sabrina at Webb of Wonders." }, { question: "Is the tree in Howling Marshes?", answer: "No. It is in Moonlit Pines, near Luna's seed cart and cottage." }, { question: "Why can't I find the tree?", answer: "Make sure you are west of the stairs near Luna's cart, not deeper into Moonlit Pines." } ],
+    related: ["spells-guide", "samael-romance", "beginner-guide"], sources: [PCG_TREE]
   },
-  "beginner-guide": {
-    slug: "beginner-guide",
-    title: "Moonlight Peaks Beginner Guide – First Week Tips & What to Do First",
-    description: "Just started Moonlight Peaks? Follow a first-night walkthrough, learn which early tasks matter, unlock tools, and use practical tips for a strong first week.",
-    h1: "Moonlight Peaks Beginner Guide",
-    eyebrow: "Start here",
-    answer: "Start by following Orlock's introduction, planting the first Blood Grape, registering at Town Hall, and learning the overnight routine before trying to optimize profit.",
-    updated: "2026-07-13",
+
+"is-moonlight-peaks-worth-it": {
+    slug: "is-moonlight-peaks-worth-it", title: "Is Moonlight Peaks Worth It? — Price, Platforms & What Players Say",
+    description: "Should you buy Moonlight Peaks? Compare price ($34.99), platforms, Steam sentiment (Very Positive), gameplay systems, and honest reasons to buy now or wait.",
+    h1: "Is Moonlight Peaks Worth It?", eyebrow: "Buying guide", updated: "2026-07-13",
+    answer: "For players who want a full single-player farming sim with a strong gothic-vampire atmosphere, Moonlight Peaks is a reasonable purchase. Players sensitive to slow travel, loading screens, or early technical issues may prefer to wait for patches or try the free demo first.",
     sections: [
-      {
-        heading: "Character creation basics",
-        bullets: [
-          "Choose your character name, farm name, and Hellkitten name.",
-          "Appearance choices are cosmetic and do not appear to change core gameplay.",
-          "You can focus on the look you want without planning around stats.",
-        ],
-      },
-      {
-        heading: "First night checklist",
-        bullets: [
-          "Wake from the coffin at around 6 PM and meet Orlock.",
-          "Follow the farm introduction and plant the Blood Grape provided for the tutorial.",
-          "Visit Town Hall and register with Mayor Brook.",
-          "Meet nearby residents as the opening tasks direct you.",
-          "Return to your coffin before 6 AM; sleeping is the normal save point.",
-        ],
-      },
-      {
-        heading: "First seven days",
-        bullets: [
-          "Plant a manageable plot instead of spending the whole night watering.",
-          "Gather flowers and forageables while learning the map.",
-          "Check glowing ground spots and keep unusual materials until their use is clear.",
-          "Talk to residents on routes you already travel; do not force a perfect social schedule.",
-          "Follow tool and wand quests before expanding too aggressively.",
-          "Check the job board for low-risk early rewards.",
-          "End each night with enough time to reach the coffin safely.",
-        ],
-      },
-      {
-        heading: "Tool overview",
-        table: {
-          headers: ["Tool", "Early use", "Beginner note"],
+      { heading: "What this page is (and is not)", paragraphs: ["This is a purchase decision guide based on publicly available data — Steam store information, community feedback, and attributed guide coverage. It is not a first-person review. We have not played the game on your behalf, and we do not pretend to. Use this alongside the official demo to make your own call."] },
+      { heading: "Price and platform quick reference",
+        table: { headers: ["Platform", "Approximate price", "Demo"],
+          rows: [ ["Steam (PC/macOS)", "$34.99 (varies by region and sale)", "Yes — Steam demo"], ["Nintendo Switch", "~$34.99 (regional)", "Yes — eShop demo"], ["Nintendo Switch 2", "~$39.99 (+$5 upgrade from Switch 1)", "TBD"], ["Android (Google Play)", "Price varies", "No separate demo"] ] },
+        note: "Prices are community-reported approximations. Always confirm the current listing before buying. Prices may vary by region, edition, and sale period." },
+      { heading: "Steam reception", bullets: ["Current public rating: Very Positive.", "Peak concurrent players: 5,422.", "59 Steam achievements available at launch.", "Ratings change over time as more owners post reviews — check the live Steam page for the latest percentage."] },
+      { heading: "What you get", bullets: ["Farming with cursed and enchanted crops, seasonal planning, and keg processing.", "Fishing with rod upgrades, multiple species, and location variety.", "Spellcasting — Aquaflux, Arborascend, Ethereal Hands, Maturio, and more through wand progression.", "Potion brewing — Alter Ego Elixir, Love Potion, skill tonics.", "Mining and foraging across caves, forests, and beaches.", "Romance with around two dozen candidates across seven supernatural families.", "Marriage with a unique vampire-spouse transformation mechanic.", "Shapeshifting forms — Bat Form (speed), Cat Form (creature interaction), Mermaid Form (underwater).", "Nokturna card minigame with collectible cards.", "Home and farm customization with gothic decor and upgrades.", "Seven distinct family storylines woven into the main plot."] },
+      { heading: "Reasons to buy now", bullets: ["You enjoy cozy farming sims and want a darker, gothic setting.", "You value atmosphere and originality over mechanical innovation.", "You play solo — multiplayer is not part of this game's design.", "The demo left you wanting more.", "You like relationship-heavy games with deep character storylines.", "Platform: You own a PC, Switch, or Android device (the only supported platforms)."] },
+      { heading: "Reasons to wait", bullets: ["You want co-op or multiplayer — this is a purely single-player game.", "You only own a PS5 or Xbox — no console port has been announced.", "Steam Deck users: Independent reviews note long loading screens, small text, and occasional stutter.", "You want fully-mapped crop prices, gift tables, and fish species — community data is still growing.", "You prefer to wait for post-launch patches fixing performance and UI scaling issues.", "Budget: The game launched at full price. If you prefer to wait for a sale, that's a valid approach."] }
+    ],
+    faqs: [ { question: "Is this a first-person review?", answer: "No. This is a buying guide based on Steam store data, community feedback, and attributed guide sources." }, { question: "What is the safest way to decide?", answer: "Try the free demo on Steam or Nintendo Switch. It covers the opening hours and gives you a direct feel for the gameplay loop." }, { question: "Are Steam ratings fixed?", answer: "No. Review counts and percentages change as more owners post reviews. Check the live Steam page for the latest score." } ],
+    related: ["beginner-guide", "games-like-moonlight-peaks", "steam-deck"], sources: [STEAM, OFFICIAL_SITE, SDHQ]
+  },
+
+"money-guide": {
+    slug: "money-guide", title: "How to Make Money Fast in Moonlight Peaks — Gold Farming Guide",
+    description: "Best ways to earn coins in Moonlight Peaks: ranked money-making methods, keg processing, fishing for profit, job board strategy, and what NOT to sell early.",
+    h1: "How to Make Money in Moonlight Peaks", eyebrow: "Economy guide", updated: "2026-07-13",
+    answer: "Use a mixed economy: maintain profitable crops, complete job board requests, fish during route downtime, and process surplus crops through Kegs. Community reports suggest grape wine processing significantly improves crop value. Do not sell ore, quest items, or your only sample of a new crop early.",
+    sections: [
+      { heading: "Ranked money-making methods",
+        table: { headers: ["Rank", "Method", "Why it works", "Confidence"],
           rows: [
-            ["Shovel", "Prepare soil and interact with dig spots", "Keep it on the tool wheel"],
-            ["Watering Can", "Water ordinary and magical crops", "Mana and water needs are separate systems"],
-            ["Axe", "Clear wood and farm debris", "Avoid clearing everything at once"],
-            ["Pickaxe", "Break rocks and mine", "Save ore until recipes are clear"],
-            ["Broken Wand", "Starts the magic progression", "Repair it through the related quest"],
-            ["Fishing Rod", "Fish after Noel's introduction", "Location data is still being verified"],
-            ["Bug Net", "Catch insects", "Carry it while exploring"],
-          ],
-        },
-      },
-      {
-        heading: "20 quick beginner tips",
-        bullets: [
-          "Sleep to save.", "Plan your route before leaving the farm.", "Be back by 6 AM.", "Use the tool wheel instead of carrying one tool mentally.", "Plant only what you can maintain.", "Keep one sample of unfamiliar materials.", "Gather flowers as you travel.", "Inspect glowing soil.", "Talk to residents on your route.", "Read the almanac for spell patterns.", "Protect some mana for quest spells.", "Check the job board regularly.", "Repair the wand early.", "Unlock the fishing rod when Noel's task appears.", "Treat exact event dates as flexible unless the journal states them.", "Use signs and landmarks to learn each region.", "Process crops only when the output is confirmed useful.", "Do not sell quest-looking items impulsively.", "Use dates and gifts after understanding heart requirements.", "Prioritize steady progress over a perfect first week."
-        ],
-      },
+            ["1", "Repeatable crops + Kegs", "Most reliable income. Process pumpkins and nightshade through Kegs for a value multiplier.", "System confirmed; exact GPM values TBD"],
+            ["2", "Job board", "Targeted rewards for items you already have. Complete requests on existing routes.", "Guide-backed"],
+            ["3", "Fishing", "Uses time between crop maintenance. Hammerhead Shark and Carp top the gold-per-minute charts.", "System confirmed; species values from guide sources"],
+            ["4", "Foraging surplus", "Flowers, shells, herbs — zero cost, pure profit. Sell what you don't need for quests.", "Values vary; keep quest items"],
+            ["5", "Drying Racks", "Turn foraged herbs into higher-value dried goods. Cheap to build.", "Community-reported"]
+          ] } },
+      { heading: "The Keg economy", paragraphs: ["Kegs process raw crops into higher-value goods. Community reports consistently identify grape wine as a strong income tool. Build at least three Kegs as soon as the crafting menu unlocks and keep them running every night. Process pumpkins and nightshade for the best returns — cursed crops double as food and profit, so you never waste a harvest."] },
+      { heading: "Chester's shipping bin and the job board", bullets: ["Sell confirmed surplus through Chester, not every new item you find.", "Check the job board before selling a mixed stack — a request may use the same material.", "Prefer tasks you can finish on your normal route rather than making a special trip.", "Community tip: build multiple Kegs right at the start and keep them running."] },
+      { heading: "What not to sell early", bullets: ["Your only sample of an unfamiliar crop or fish.", "Copper Ore and Iron Ore — needed for tool upgrades and crafting stations.", "Quest-marked items.", "Rare forageables with unknown recipes.", "A full seed reserve for the next planting cycle."] }
     ],
-    faqs: [
-      { question: "How does saving work?", answer: "The game normally saves when you sleep, so avoid closing it in the middle of a night." },
-      { question: "What time does a new night begin?", answer: "The opening routine begins around 6 PM. Exact transitions can vary with scenes." },
-      { question: "Should I sell every early forageable?", answer: "No. Keep at least one unfamiliar or quest-like item until its use is clear." },
-    ],
-    related: ["farming-guide", "fishing-guide", "money-guide"],
-    sources: [OFFICIAL_SITE, STEAM],
+    faqs: [ { question: "What is the best crop for profit?", answer: "Pumpkins and nightshade are strong cursed-crop staples. Exact gold-per-minute values are still being verified." }, { question: "Should I turn grapes into wine?", answer: "Community reports suggest yes — processing through Kegs improves value. Test one batch before committing an entire harvest." }, { question: "Should I sell ore early?", answer: "No. Keep Copper and Iron Ore until tool upgrades and crafting needs are covered." } ],
+    related: ["farming-guide", "fishing-guide", "beginner-guide"], sources: [OFFICIAL_SITE, LG_BEGINNER]
   },
-  "romance-guide": {
-    slug: "romance-guide",
-    title: "Moonlight Peaks Romance Guide – Dating, Marriage & Romance Options",
-    description: "Moonlight Peaks romance guide covering romanceable characters, dating, gifts, marriage, and how relationships work in the vampire farming sim.",
-    h1: "Moonlight Peaks Romance Guide",
-    eyebrow: "Relationships",
-    answer: "Yes. Official store descriptions advertise two dozen romanceable characters, while most current guides list 23 named options; the total may be clarified by future updates.",
-    updated: "2026-07-13",
+
+"gift-guide": {
+    slug: "gift-guide", title: "Moonlight Peaks Gift Guide — Best Gifts for Every Character",
+    description: "Moonlight Peaks gift guide: loved and disliked gifts for romanceable characters, gift-giving mechanics, and how to find the best gifts. Updated as community data grows.",
+    h1: "Moonlight Peaks Gift Guide", eyebrow: "Relationship reference", updated: "2026-07-13",
+    answer: "Gift preferences are still being mapped by the community. Give loved gifts for the fastest affection progress, use liked gifts as safe alternatives, and avoid disliked items. Keep notes of in-game reactions — public gift tables for this game are still incomplete.",
     sections: [
-      {
-        heading: "How dating works",
-        bullets: [
-          "Build hearts by talking and giving appropriate gifts.",
-          "At four hearts, eligible characters can typically receive a date invitation after their scene requirements are met.",
-          "Choose Invite, then Ask on date; the outing normally begins after you sleep and start the next night.",
-          "Multiple invitations can queue in a confusing order, so schedule one date at a time.",
-          "Dates use short activities or minigames and continue relationship progression.",
-        ],
-      },
-      {
-        heading: "Key characters to know",
-        table: {
-          headers: ["Name", "Connection", "Romance status", "Important note"],
+      { heading: "How gift-giving works", bullets: ["Talk to a character and choose the gift interaction when prompted.", "Loved gifts give the biggest affection boost — approximately 3x that of a neutral item.", "Liked gifts are a safe fallback if you don't have a loved item.", "Disliked gifts waste a daily opportunity and can slow relationship progress.", "Birthday gifts give a massive multiplied affection bonus — do not miss birthdays.", "Each character can receive one gift per day."] },
+      { heading: "Known gift preferences",
+        table: { headers: ["Character", "Loved gifts", "Liked gifts", "Disliked gifts", "Source confidence"],
           rows: [
-            ["Orlock", "Ambrosia family", "Listed among relationship characters", "Gift data TBD"],
-            ["Saga", "Town resident", "Romanceable", "Requirements TBD"],
-            ["Samael", "Orlock's nephew; Broken Lamp owner", "Romanceable after story unlock", "See the dedicated unlock guide"],
-            ["Death", "Supernatural resident", "Romanceable", "Gift data TBD"],
-            ["Fiona", "Town resident", "Romanceable", "Gift data TBD"],
-            ["Luna", "Seed seller in Moonlit Pines", "Romanceable", "Gift data TBD"],
-          ],
-        },
-        note: "This is a practical starter table, not a complete character database. Unknown gift preferences remain TBD.",
-      },
-      {
-        heading: "Marriage and vampirism",
-        paragraphs: [
-          "Marriage is part of the relationship progression described by current guides. Exact proposal requirements and post-marriage changes should be confirmed in game as each route develops.",
-          "The possibility of turning a spouse into a vampire is discussed in current game coverage, but route-specific conditions are still being verified. Treat the exact trigger as TBD rather than spending rare items based on a guess.",
-        ],
-      },
+            ["Samael", "Red wine", "TBD", "TBD", "Guide-reported"],
+            ["Orlock", "TBD", "TBD", "TBD", "Unverified"],
+            ["Saga", "TBD", "TBD", "TBD", "Unverified"],
+            ["Ridge", "TBD", "TBD", "TBD", "Unverified"],
+            ["Death", "TBD", "TBD", "TBD", "Unverified"],
+            ["Fiona", "TBD", "TBD", "TBD", "Unverified"],
+            ["Luna", "TBD", "TBD", "TBD", "Unverified"],
+            ["Evan", "TBD", "TBD", "TBD", "Unverified"],
+            ["Ludo", "TBD", "TBD", "TBD", "Unverified"]
+          ] },
+        note: "A table with many TBD entries is honest, not incomplete. Publishing invented gift data would waste your time and rare items. This table updates only with attributable observations from guide sources or verified community reports." },
+      { heading: "How to discover gift preferences yourself", bullets: ["Keep one sample of every crop, cooked dish, flower, shell, ore, and crafted item.", "Use character dialogue and reaction text as the strongest in-game clue.", "Check family themes — Ambrosia family members may prefer wine and potions; Logan family may favor farm goods.", "Talk to family members — they sometimes hint at what another character likes.", "Take notes. No public gift database is complete yet, so your own observations are valuable."] }
     ],
-    faqs: [
-      { question: "How many romance options are there?", answer: "Official descriptions say two dozen. Most current guides list 23 named characters, so this guide avoids presenting a fragile exact count as permanent." },
-      { question: "When can I ask someone on a date?", answer: "Typically after four hearts and any required heart scene or story gate." },
-      { question: "Can I date more than one character?", answer: "Current guide reports indicate you can issue multiple invitations, but queued dates can be hard to track." },
-    ],
-    related: ["samael-romance", "gift-guide", "treasure-hunt-clues"],
-    sources: [STEAM, GOOGLE_PLAY, PC_GAMER_DATES],
+    faqs: [ { question: "What gift does Samael love?", answer: "Red wine is the current guide-confirmed loved gift." }, { question: "Why are most entries TBD?", answer: "The game is new (released July 7, 2026) and gift preferences are still being discovered and verified by the community." }, { question: "Are community gift lists reliable?", answer: "Use them as leads, not facts. Confirm with in-game reactions before investing rare items." }, { question: "Do birthday gifts matter?", answer: "Yes — birthday gifts give a significantly larger affection bonus than normal gifts." } ],
+    related: ["romance-guide", "samael-romance", "farming-guide"], sources: [PCG_SAMAEL]
   },
-  "samael-romance": {
-    slug: "samael-romance",
-    title: "How to Unlock Samael Romance in Moonlight Peaks",
-    description: "Step-by-step guide to dating Samael Ambrosia: unlock path, quest requirements, where to find him, known gifts, and common blockers.",
-    h1: "How to Unlock Samael Romance in Moonlight Peaks",
-    eyebrow: "Romance walkthrough",
-    answer: "Samael becomes romanceable only after the Luna Bay story chain, Bride's Attendant Duty, a one-week wait, and Unfinished Business; you also need four hearts to ask him out.",
-    updated: "2026-07-13",
+
+"spells-guide": {
+    slug: "spells-guide", title: "Moonlight Peaks Spells Guide — Magic, Mana & How to Unlock Spells",
+    description: "How to unlock magic in Moonlight Peaks: spell list with effects, mana management, wand upgrades, and shapeshifting forms. All known spells from Eurogamer and PC Gamer guides.",
+    h1: "Moonlight Peaks Spells Guide", eyebrow: "Magic guide", updated: "2026-07-13",
+    answer: "Repair your broken wand through early story progression (around Night 18 via Luna and Noel), manage mana between farm spells and quest spells, and upgrade to the Witch's Wand (5,000g) for Aquaflux II which waters 48 crops at once.",
     sections: [
-      {
-        heading: "Who and where is Samael?",
-        paragraphs: ["Samael Ambrosia is Orlock's nephew and runs The Broken Lamp on the east side of town. His relationship panel initially stops at four friendship hearts, which is a story gate rather than a permanent rejection."],
-      },
-      {
-        heading: "Unlock requirements checklist",
-        bullets: [
-          "Progress the main story through A Curious Passage.",
-          "Complete The Mysterious Bay and gain access to Luna Bay.",
-          "Lift the fallen tree with Arborascend and repair the bridge with Ludo as the story requests.",
-          "Complete Bride's Attendant Duty.",
-          "Wait about one in-game week for Orlock's home visit.",
-          "Complete Unfinished Business.",
-          "Reach four hearts with Samael and view the required heart scene.",
-          "Use Invite, then Ask on date.",
-        ],
-      },
-      {
-        heading: "Common blockers",
-        table: {
-          headers: ["Blocker", "What to check"],
+      { heading: "Getting started with the wand", bullets: ["Keep the Broken Wand from the opening scene with Orlock. Do not sell or discard it.", "Around Night 18, visit Luna to trigger the wand repair quest.", "Noel will repair your wand, unlocking spellcasting and the Aquaflux spell.", "Upgrade to the Witch's Wand (5,000g from Sabrina) for Aquaflux II — waters 48 crops at once.", "Use the in-game almanac to review learned spell patterns — guessing wastes mana."] },
+      { heading: "Known spell reference",
+        table: { headers: ["Spell", "Effect", "How to unlock", "Cost"],
           rows: [
-            ["Only four hearts are visible", "Continue the Luna Bay main-story chain"],
-            ["Orlock has not visited", "Confirm Bride's Attendant Duty is complete, then wait about one week"],
-            ["Date option is missing", "Finish Unfinished Business and reach four hearts"],
-            ["Fallen tree will not move", "Buy Arborascend from Sabrina and preserve enough mana"],
-          ],
-        },
-      },
-      {
-        heading: "Gift preferences",
-        table: {
-          headers: ["Gift", "Status", "Confidence"],
+            ["Aquaflux I", "Water multiple crops at once", "Wand repair quest (around Night 18)", "Free (starter spell)"],
+            ["Aquaflux II", "Water 48 crops at once", "Witch's Wand upgrade (5,000g)", "5,000g"],
+            ["Arborascend I", "Lift fallen trees and wooden obstacles", "Buy from Sabrina at Webb of Wonders", "Purchase price TBD"],
+            ["Ethereal Hands I", "Remote interaction with objects", "TBD", "TBD"],
+            ["Maturio I", "Speed up crop growth", "TBD", "TBD"],
+            ["Levitate", "Utility movement spell", "Spell shop", "3,000g"],
+            ["Mind's Eye", "Exploration utility", "Spell shop", "2,000g"],
+            ["Tomorrow's Tears", "Time manipulation", "Late game progression", "10,000g"]
+          ] },
+        note: "Spell names confirmed by Eurogamer and PC Gamer guide data. Unlock steps and costs are guide-reported and may vary slightly with game version or quest order." },
+      { heading: "Mana management", bullets: ["Mana is shared across farming spells and quest spells — do not empty the meter before a spell-gated quest.", "Use the Mana Extractor (crafted with 3 Copper Bars + 3 Iron Bars, bring to Sabrina) to increase maximum mana.", "Rose Quartz from the Crystal Caves is required for some mana upgrades.", "Food and potions can restore mana — keep restorative items in your inventory.", "Use ordinary tools for routine tasks. Save mana for spells that have no non-magical alternative."] },
+      { heading: "Shapeshifting forms", paragraphs: ["Official descriptions confirm multiple shapeshifting forms unlock through story progression: Bat Form (increased movement speed and aerial traversal), Cat Form (creature interaction), and Mermaid Form (underwater exploration). Exact unlock steps are progression-sensitive — this first-batch guide does not publish an unverified complete list."] }
+    ],
+    faqs: [ { question: "How do I unlock spells?", answer: "Complete the wand repair quest around Night 18. Visit Luna, then Noel repairs your wand. This unlocks Aquaflux and spellcasting." }, { question: "Where do I get Arborascend?", answer: "Buy from Sabrina at Webb of Wonders after progressing the wand quest." }, { question: "How do I increase mana?", answer: "Craft a Mana Extractor (3 Copper Bars + 3 Iron Bars) and bring it to Sabrina. Rose Quartz from the Crystal Caves may also be required." }, { question: "When can I get the Witch's Wand?", answer: "Buy from Sabrina for 5,000g. It unlocks Aquaflux II which waters 48 crops at once." } ],
+    related: ["fallen-tree", "beginner-guide", "farming-guide"], sources: [OFFICIAL_SITE, PCG_TREE]
+  },
+
+"farming-guide": {
+    slug: "farming-guide", title: "Moonlight Peaks Farming Guide — All Crops, Seasons & Profit Tips",
+    description: "Complete Moonlight Peaks farming guide: cursed and enchanted crops, seasonal planting by crop type, keg processing strategy, and which crops to plant for maximum profit.",
+    h1: "Moonlight Peaks Farming Guide", eyebrow: "Farm systems", updated: "2026-07-13",
+    answer: "Grow cursed crops (pumpkins, nightshade, shadow wheat) for sustenance and income, and enchanted crops (roses, luna seeds, ghost peppers) for higher profit — but enchanted crops require the Aquaflux spell to water. Build Kegs early to process raw crops into higher-value goods.",
+    sections: [
+      { heading: "Farming basics", bullets: ["Prepare soil with the shovel, plant seeds suited to the current season, and water daily.", "Cursed crops can be watered normally and grow year-round.", "Enchanted crops require the Aquaflux spell to water — without it, they wither.", "Harvest on time and keep one sample of each new crop before selling.", "Process crops through Kegs for significantly higher sell prices — pumpkins and nightshade benefit most.", "Use Drying Racks for foraged herbs — cheap to build and provide steady supplementary income."] },
+      { heading: "Crop types and planning",
+        table: { headers: ["Type", "Examples", "Watering", "Season", "Strategy"],
           rows: [
-            ["Red wine", "Loved according to current guide reporting", "Guide-sourced"],
-            ["Other loved gifts", "TBD", "Not verified"],
-            ["Disliked gifts", "TBD", "Not verified"],
-          ],
-        },
-      },
-    ],
-    faqs: [
-      { question: "Is Samael romanceable?", answer: "Yes, but his romance hearts are locked behind main-story progress." },
-      { question: "How long do I wait after Bride's Attendant Duty?", answer: "Current guide reporting says about one in-game week before Orlock visits." },
-      { question: "Where does Samael work?", answer: "At The Broken Lamp on the east side of town." },
-    ],
-    related: ["romance-guide", "gift-guide", "fallen-tree", "treasure-hunt-clues"],
-    sources: [PC_GAMER_SAMAEL, PC_GAMER_TREE],
-  },
-  "treasure-hunt-clues": {
-    slug: "treasure-hunt-clues",
-    title: "Moonlight Peaks Elvira Treasure Hunt Clues Guide",
-    description: "Find Elvira's treasure with all five clue locations, clear map areas, exact search spots, and what to look for at each stop.",
-    h1: "Elvira Treasure Hunt Clue Locations – Moonlight Peaks",
-    eyebrow: "Quest locations",
-    answer: "Elvira's hunt has five stops: The Broken Lamp, the Ambrosia graveyard, Webb of Wonders, Cave of Echoes, and Khazan Temple.",
-    updated: "2026-07-13",
-    sections: [
-      { heading: "How to start", paragraphs: ["Accept Elvira's treasure-hunt task when it becomes available, then inspect each envelope in order. The clues are sequential, so visiting a later location early may not advance the quest."] },
-      {
-        heading: "All five clue locations",
-        table: {
-          headers: ["Clue", "Area", "Exact spot", "What to look for", "Note"],
+            ["Cursed crops", "Pumpkins, Nightshade, Shadow Wheat", "Normal watering can", "Year-round", "Staple food + profit. Process through Kegs."],
+            ["Enchanted crops", "Enchanted Roses, Luna Seeds, Ghost Peppers", "Requires Aquaflux spell", "Seasonal or year-round", "High profit but mana cost. Only expand after getting Aquaflux II."],
+            ["Trees", "Orchard varieties", "Normal", "Year-round", "Long-term investment. Leave permanent space."],
+            ["Herbs", "Multiple varieties", "Normal or forage", "Seasonal", "Use for cooking and potions. Process extras through Drying Racks."],
+            ["Mushrooms", "Multiple varieties", "Forage", "Seasonal", "Not all are edible — verify before cooking."]
+          ] },
+        note: "Current guide datasets from Eurogamer report around 53 seeds total. This page intentionally does not reproduce a full 53-row data table or invent missing values. Farming strategy matters more than a spreadsheet of unverified numbers." },
+      { heading: "Crop profitability ranking",
+        table: { headers: ["Tier", "Crop", "Type", "Season", "Notes"],
           rows: [
-            ["1", "The Broken Lamp", "Right side near the wine racks", "Envelope on the floor", "Inside Samael's bar"],
-            ["2", "Ambrosia graveyard", "Upper-left area behind a bat-shaped headstone", "Partly hidden envelope", "Misty Shores region"],
-            ["3", "Webb of Wonders", "Right side beside the pottery station", "Envelope near the work area", "Inside Sabrina's shop"],
-            ["4", "Cave of Echoes", "Eastern side near the large hour bell", "Envelope between stone features", "Bring mining supplies"],
-            ["5", "Khazan Temple", "Outside on the right side of the waterfall", "Final note on the ground", "Take the east path from Town Hall"],
-          ],
-        },
-      },
-      { heading: "Reward", paragraphs: ["Completing the chain awards a painting for your house. The exact artwork appearance may vary or be clarified by further reports."] },
+            ["S", "Pumpkins", "Cursed", "All year", "Highest GPM among cursed crops. Keg-processed value is excellent."],
+            ["A", "Nightshade", "Cursed", "All year", "Strong secondary crop. Process through Kegs."],
+            ["A", "Enchanted Roses", "Enchanted", "All year", "High profit but requires Aquaflux mana."],
+            ["B", "Luna Seeds", "Enchanted", "Seasonal", "Top enchanted crop during seasonal window. Miss the window and wait a full cycle."],
+            ["B", "Ghost Peppers", "Enchanted", "All year", "Decent enchanted option. Lower GPM than roses."],
+            ["C", "Shadow Wheat", "Cursed", "All year", "Lowest GPM among staples. Use for food, not profit."]
+          ] },
+        note: "Tier list adapted from community guide GPM (gold per minute) calculations. Exact sell prices are still being verified and may change with patches." },
+      { heading: "Keg and processing strategy", bullets: ["Build at least 3 Kegs as soon as the crafting menu unlocks.", "Keg-processed pumpkins sell for roughly 3x the raw crop price (guide-reported estimate).", "Keep Kegs running every night — the processing time creates cash flow but pays off.", "Drying Racks are a cheaper secondary option for herbs and forageables.", "Do not process quest-required crops or your only sample of a new variety."] }
     ],
-    faqs: [
-      { question: "How many clues are there?", answer: "Five, and they must be found in order." },
-      { question: "Where is the Cave of Echoes clue?", answer: "On the eastern side of the mine near the large bell that marks time." },
-      { question: "What is the treasure-hunt reward?", answer: "A painting that can be displayed in your house." },
-    ],
-    related: ["samael-romance", "romance-guide", "fallen-tree"],
-    sources: [PC_GAMER_TREASURE],
+    faqs: [ { question: "How many seeds are in Moonlight Peaks?", answer: "Guide datasets from Eurogamer describe approximately 53 seed varieties. Exact membership and sell prices are still being independently verified." }, { question: "What is the best crop per season?", answer: "Pumpkins top the GPM chart for cursed crops year-round. Luna Seeds are the top enchanted crop during their seasonal window." }, { question: "Do I need Aquaflux to water all crops?", answer: "No. Cursed crops can be watered normally. Only enchanted crops require Aquaflux." }, { question: "How many Kegs should I build?", answer: "Start with at least 3. Add more as your crop supply grows." } ],
+    related: ["money-guide", "beginner-guide", "fishing-guide"], sources: [OFFICIAL_SITE]
   },
-  "fallen-tree": {
-    slug: "fallen-tree",
-    title: "Where to Find the Fallen Tree in Moonlight Peaks – Location & Spell",
-    description: "Find the fallen tree blocking the waterfall in Moonlight Peaks, learn the Moonlit Pines location, required Arborascend spell, and common mistakes.",
-    h1: "Where to Find the Fallen Tree in Moonlight Peaks",
-    eyebrow: "Quest solution",
-    answer: "The fallen tree is in Moonlit Pines, blocking the small waterfall west of the stairs to Luna's seed cart and cottage. Cast Arborascend to move it.",
-    updated: "2026-07-13",
+
+"fishing-guide": {
+    slug: "fishing-guide", title: "Moonlight Peaks Fishing Guide — Rod, Fish Locations & Tips",
+    description: "How to get the fishing rod from Noel on Night 2, all fish species with spawn locations, rod upgrades, bite timing tips, and the best fish for gold.",
+    h1: "Moonlight Peaks Fishing Guide", eyebrow: "Fishing basics", updated: "2026-07-13",
+    answer: "Get the fishing rod from Noel by a forest river around Night 2 (after completing 'Meet the Townsfolk'). Catch three fish and bring them to The Broken Lamp to prove yourself. Upgrade to the Premium Rod for large fish, and target Hammerhead Shark and Carp for the best gold per minute.",
     sections: [
-      {
-        heading: "The Mysterious Bay checklist",
-        bullets: [
-          "Advance The Mysterious Bay until the task asks you to clear access.",
-          "Visit Webb of Wonders and buy Arborascend from Sabrina.",
-          "Keep enough mana available before leaving town.",
-          "Travel to Moonlit Pines and locate Luna's seed cart.",
-          "Walk west of the nearby stairs to the waterfall.",
-          "Stand near the fallen log and cast Arborascend.",
-        ],
-      },
-      {
-        heading: "Common mistakes",
-        bullets: [
-          "Do not begin by searching the Howling Marshes; the quest destination is in Moonlit Pines.",
-          "Do not search Luna Bay itself before clearing the route.",
-          "Do not spend all mana watering magical crops before the trip.",
-          "Check the almanac if you forget the spell pattern instead of guessing repeatedly.",
-        ],
-      },
-      { heading: "How to get Arborascend", paragraphs: ["Sabrina sells Arborascend at Webb of Wonders. Purchase availability may depend on normal spell progression; if it is not listed yet, continue the wand and magic quests and check again."] },
-    ],
-    faqs: [
-      { question: "Which quest uses the fallen tree?", answer: "The Mysterious Bay." },
-      { question: "Which spell moves the tree?", answer: "Arborascend." },
-      { question: "Is the tree in Howling Marshes?", answer: "No. It is in Moonlit Pines near Luna's seed cart." },
-    ],
-    related: ["spells-guide", "samael-romance", "beginner-guide"],
-    sources: [PC_GAMER_TREE],
-  },
-  "is-moonlight-peaks-worth-it": {
-    slug: "is-moonlight-peaks-worth-it",
-    title: "Is Moonlight Peaks Worth It? – Price, Platforms & What Players Say",
-    description: "Should you buy Moonlight Peaks? Compare platforms, public Steam sentiment, gameplay systems, and practical reasons to buy now or wait.",
-    h1: "Is Moonlight Peaks Worth It?",
-    eyebrow: "Buying guide",
-    answer: "For players who want a full single-player farming sim with a strong gothic-vampire theme, Moonlight Peaks is a reasonable buy; players sensitive to slow travel, loading, or early technical issues may prefer to wait for updates or try the demo first.",
-    updated: "2026-07-13",
-    sections: [
-      {
-        heading: "Price and platform snapshot",
-        paragraphs: ["The game is sold on Steam, Nintendo Switch, Switch 2, and Google Play. Prices vary by storefront, region, edition, and sale period, so this page deliberately does not freeze a single price."],
-        table: { headers: ["Question", "Practical answer"], rows: [["Can I try it first?", "Demo listed on Steam and Nintendo Switch"], ["Is it multiplayer?", "No, single-player only"], ["Is it on PS5 or Xbox?", "Not announced"], ["How are Steam reviews?", "Public rating is currently Very Positive; the percentage changes over time"]] },
-      },
-      {
-        heading: "What you get",
-        bullets: ["Farming and magical crops", "Fishing, mining, foraging, and crafting", "Spell-casting, potion-making, and shapeshifting", "Town stories across seven families", "Dating and marriage systems", "Gothic home and farm customization"],
-      },
-      {
-        heading: "Who should buy now",
-        bullets: ["Players who value atmosphere and a supernatural twist on the farming loop", "Solo players who enjoy relationship and town progression", "Players comfortable verifying performance on their chosen platform", "Anyone who enjoys the demo and wants a longer progression loop"],
-      },
-      {
-        heading: "Who may want to wait",
-        bullets: ["Players looking for co-op", "PS5 or Xbox-only players", "Steam Deck players bothered by long loading and small text", "Players who prefer mature post-launch patches and fully mapped gift or crop data"],
-      },
-    ],
-    faqs: [
-      { question: "Is this a first-person review?", answer: "No. This is a buying guide based on official store data and clearly attributed public coverage." },
-      { question: "Are Steam ratings fixed?", answer: "No. Review counts and percentages change as more owners post reviews." },
-      { question: "What is the safest way to decide?", answer: "Try the official demo where available and check the current storefront notes for your platform." },
-    ],
-    related: ["beginner-guide", "games-like-moonlight-peaks", "steam-deck"],
-    sources: [STEAM, OFFICIAL_SITE, STEAM_DECK_HQ],
-  },
-  "money-guide": {
-    slug: "money-guide",
-    title: "How to Make Money Fast in Moonlight Peaks – Gold Farming Guide",
-    description: "Earn coins in Moonlight Peaks with crops, processing, fishing, the job board, and a careful list of materials not to sell too early.",
-    h1: "How to Make Money in Moonlight Peaks",
-    eyebrow: "Economy guide",
-    answer: "Use a mixed early economy: maintain affordable crops, complete job-board requests with spare items, fish during route downtime, and process surplus only when the result is known to be more useful.",
-    updated: "2026-07-13",
-    sections: [
-      {
-        heading: "Ranked money-making methods",
-        table: { headers: ["Rank", "Method", "Why it helps", "Confidence"], rows: [["1", "Repeatable crops", "Predictable harvest cycle", "System confirmed; exact profits TBD"], ["2", "Job board", "Turns requested items into targeted rewards", "Guide-backed"], ["3", "Fishing", "Uses time away from crop maintenance", "System confirmed; values TBD"], ["4", "Keg processing", "Community reports suggest grape wine can improve value", "Community-reported"], ["5", "Foraging surplus", "No seed cost", "Values vary; keep quest items"]] },
-      },
-      {
-        heading: "A safer processing economy",
-        paragraphs: ["Community reports suggest kegs and grape wine can become useful income tools. Exact input-output prices are not yet verified here, so test one batch before committing an entire harvest."],
-      },
-      {
-        heading: "Chester's selling box and the job board",
-        bullets: ["Use Chester's selling box for confirmed surplus rather than every new item.", "Check the job board before selling a mixed stack; a request may use the same material.", "Prefer tasks you can complete on an existing route.", "Avoid a long detour for a reward whose value is currently unclear."],
-      },
-      {
-        heading: "What not to sell early",
-        bullets: ["Your only sample of an unfamiliar crop", "Ore needed for tool or wand progression", "Quest-marked items", "Rare forageables with unknown recipes", "A full seed reserve for the next planting cycle"],
-      },
-    ],
-    faqs: [
-      { question: "What is the best crop for profit?", answer: "Currently unclear across every season because exact verified grow-time and sell-price data is incomplete." },
-      { question: "Should I turn all grapes into wine?", answer: "No. Community reports suggest processing can help, but test the current value and keep grapes needed for quests or gifts." },
-      { question: "Should I sell ore early?", answer: "Usually not until immediate tool, wand, and crafting requirements are covered." },
-    ],
-    related: ["farming-guide", "fishing-guide", "beginner-guide"],
-    sources: [OFFICIAL_SITE],
-  },
-  "gift-guide": {
-    slug: "gift-guide",
-    title: "Moonlight Peaks Gift Guide – Best Gifts for Every Character",
-    description: "Moonlight Peaks gift guide with verified and community-reported preferences, gift mechanics, and clear TBD labels as character data grows.",
-    h1: "Moonlight Peaks Gift Guide",
-    eyebrow: "Relationship reference",
-    answer: "Gift preferences are still being mapped. Use verified entries where available, treat community reports as leads, and use TBD instead of risking rare items on invented lists.",
-    updated: "2026-07-13",
-    sections: [
-      {
-        heading: "How gift-giving works",
-        bullets: ["Talk to a resident and choose the gift interaction when available.", "Loved and liked items improve relationship progress more efficiently than random gifts.", "Disliked items can waste a limited opportunity.", "Keep a note of in-game reactions; current public tables are incomplete."],
-      },
-      {
-        heading: "Known gift table",
-        table: { headers: ["Character", "Loved gifts", "Liked gifts", "Disliked gifts", "Source status"], rows: [["Samael", "Red wine", "TBD", "TBD", "Guide-reported"], ["Orlock", "TBD", "TBD", "TBD", "Unverified"], ["Saga", "TBD", "TBD", "TBD", "Unverified"], ["Death", "TBD", "TBD", "TBD", "Unverified"], ["Fiona", "TBD", "TBD", "TBD", "Unverified"], ["Luna", "TBD", "TBD", "TBD", "Unverified"]] },
-        note: "A blank-looking database is better than a confident fake. This table will expand only with attributable observations.",
-      },
-      {
-        heading: "Finding useful gifts",
-        bullets: ["Keep one sample of crops, flowers, cooked items, and crafted goods.", "Use resident dialogue and reaction text as the strongest in-game clue.", "Check whether an item is needed for a quest before gifting it.", "Treat forum claims as community-reported until repeated or guide-backed."],
-      },
-    ],
-    faqs: [
-      { question: "What gift does Samael love?", answer: "Current guide reporting identifies red wine as a loved gift." },
-      { question: "Why are so many entries TBD?", answer: "The game is new and many preferences do not yet have reliable, attributable confirmation." },
-      { question: "Are community gift lists official?", answer: "No. Use them as leads and confirm with in-game reactions." },
-    ],
-    related: ["romance-guide", "samael-romance", "farming-guide"],
-    sources: [PC_GAMER_SAMAEL],
-  },
-  "spells-guide": {
-    slug: "spells-guide",
-    title: "Moonlight Peaks Spells Guide – Magic, Mana & How to Unlock Spells",
-    description: "Learn how magic works in Moonlight Peaks with wand repair, mana management, known spells, unlock notes, and shapeshifting basics.",
-    h1: "Moonlight Peaks Spells Guide",
-    eyebrow: "Magic guide",
-    answer: "Repair the broken wand through early progression, learn patterns from the almanac, and manage mana between farm magic and quest spells.",
-    updated: "2026-07-13",
-    sections: [
-      { heading: "Getting started with the wand", bullets: ["Keep the Broken Wand from the opening progression.", "Follow the repair quest rather than trying to use it immediately.", "Use the almanac's spell tab to review learned cast patterns.", "Leave spare mana when a quest requires magic outside the farm."] },
-      {
-        heading: "Known spell reference",
-        table: { headers: ["Spell", "Known use", "Unlock detail", "Pattern"], rows: [["Aquaflux I", "Water-related farm utility", "Early magic progression", "Check the in-game almanac"], ["Arborascend I", "Lift or move specific tree obstacles", "Buy from Sabrina at Webb of Wonders", "Check the in-game almanac"], ["Ethereal Hands I", "Remote interaction utility", "TBD", "Check the in-game almanac"], ["Maturio I", "Crop growth utility", "TBD", "Check the in-game almanac"]] },
-      },
-      { heading: "Mana management", bullets: ["Mana is shared across farming and exploration spells.", "Do not empty the meter before a spell-gated quest.", "Food or upgrades may restore or expand practical casting capacity; exact values remain TBD.", "Use ordinary tools when speed is less important than preserving mana."] },
-      { heading: "Shapeshifting", paragraphs: ["Official descriptions confirm multiple shapeshifting forms, including the familiar vampire bat concept. Exact forms and unlock steps are progression-sensitive, so this first-batch guide does not publish an unverified complete list."] },
-    ],
-    faqs: [
-      { question: "Where can I review spell patterns?", answer: "Open the first spell section of the in-game almanac." },
-      { question: "Where do I get Arborascend?", answer: "Buy it from Sabrina at Webb of Wonders after the relevant magic progression is available." },
-      { question: "Why is a spell missing from the table?", answer: "Only currently attributable spell names are included; the list will expand with verified data." },
-    ],
-    related: ["fallen-tree", "beginner-guide", "farming-guide"],
-    sources: [OFFICIAL_SITE, PC_GAMER_TREE],
-  },
-  "farming-guide": {
-    slug: "farming-guide",
-    title: "Moonlight Peaks Farming Guide – Crops, Seasons & Profit Tips",
-    description: "Moonlight Peaks farming guide covering seasonal crops, magical plants, trees, herbs, mushrooms, and profit planning without guessed prices.",
-    h1: "Moonlight Peaks Farming Guide",
-    eyebrow: "Farm systems",
-    answer: "Begin with a small plot, track season and grow time in game, reserve mana for magical crops, and expand only when watering still leaves time for quests and gathering.",
-    updated: "2026-07-13",
-    sections: [
-      { heading: "Farming basics", bullets: ["Prepare soil with the shovel.", "Plant seeds suited to the current season.", "Water as required and monitor magical-crop mana costs.", "Harvest on time and keep one sample before selling a new crop.", "Use processing only after checking the current output value."] },
-      {
-        heading: "Seasonal planning table",
-        table: { headers: ["Category", "Known example", "Grow time", "Seed price", "Planning note"], rows: [["Opening crop", "Blood Grape", "TBD", "Tutorial-provided initially", "Learn the basic loop"], ["Seasonal crops", "Multiple varieties", "TBD", "TBD", "Check Luna's current stock"], ["Magical crops", "Spell- or mana-linked varieties", "TBD", "TBD", "Protect mana for quests"], ["Trees", "Orchard options", "TBD", "TBD", "Leave long-term space"], ["Herbs", "Forage and recipe inputs", "TBD", "TBD", "Keep samples"], ["Mushrooms", "Forage and recipe inputs", "TBD", "TBD", "Do not assume every type is edible"]] },
-        note: "Guide datasets report dozens of seeds, but this site intentionally does not reproduce a 53-row source table or invent missing values.",
-      },
-      { heading: "Profit without fake precision", bullets: ["Compare grow time, number of harvests left in the season, seed cost, and known sell value.", "Prefer crops you can water without sacrificing the whole night.", "Community reports suggest grape processing can help, but confirm the current keg result.", "Reserve a portion of every harvest for jobs, recipes, and gifts."] },
-    ],
-    faqs: [
-      { question: "How many seeds are in Moonlight Peaks?", answer: "Current guide datasets describe 53, but exact membership and values are still being independently verified." },
-      { question: "What is the best crop in every season?", answer: "Currently unclear without a stable, verified price-and-grow-time dataset." },
-      { question: "Do magical crops use mana?", answer: "Magic and mana are integrated with farming; check each crop and spell requirement in game." },
-    ],
-    related: ["money-guide", "beginner-guide", "fishing-guide"],
-    sources: [OFFICIAL_SITE],
-  },
-  "fishing-guide": {
-    slug: "fishing-guide",
-    title: "Moonlight Peaks Fishing Guide – Rod, Fish Locations & Tips",
-    description: "Learn how to get the fishing rod from Noel, understand the fishing loop, plan upgrades, and track fish locations without invented species data.",
-    h1: "Moonlight Peaks Fishing Guide",
-    eyebrow: "Fishing basics",
-    answer: "Unlock the fishing rod through Noel's early progression, equip it near fishable water, and use the on-screen timing cues; exact species and spawn tables are still being verified.",
-    updated: "2026-07-13",
-    sections: [
-      { heading: "How to get the fishing rod", bullets: ["Meet Noel through normal town progression.", "Complete the introductory request or conversation that awards access to the rod.", "Check your inventory and tool wheel after the scene.", "If it has not appeared, continue opening quests and speak with Noel again on a later route."] },
-      { heading: "How fishing works", bullets: ["Stand at a valid water edge and equip the rod.", "Cast only when the interaction indicator is active.", "Watch the bite and reel timing prompts rather than mashing immediately.", "Use short fishing sessions between travel objectives so the night remains productive."] },
-      { heading: "Rod upgrades", paragraphs: ["Rod upgrades are part of the expected progression, but exact materials, costs, and tiers are currently unclear. Keep ore and specialist materials until the upgrade menu confirms what is required."] },
-      { heading: "Known fish table", table: { headers: ["Species", "Location", "Season", "Time", "Status"], rows: [["TBD", "TBD", "TBD", "TBD", "Awaiting verified source data"]] }, note: "No fish species or locations are published here until they can be attributed reliably." },
-    ],
-    faqs: [
-      { question: "Who gives you the fishing rod?", answer: "Noel, through early town progression." },
-      { question: "Where is the best fishing spot?", answer: "Currently unclear; verified location and value data is still incomplete." },
-      { question: "Why is the fish list marked TBD?", answer: "Publishing an empty verified list is safer than inventing species or spawn locations." },
-    ],
-    related: ["beginner-guide", "farming-guide", "money-guide"],
-    sources: [OFFICIAL_SITE],
-  },
-  "steam-deck": {
-    slug: "steam-deck",
-    title: "Moonlight Peaks Steam Deck – Performance, Settings & Known Issues",
-    description: "See how Moonlight Peaks runs on Steam Deck, with compatibility status, practical settings, loading notes, text-size concerns, and known issues.",
-    h1: "Moonlight Peaks on Steam Deck",
-    eyebrow: "Handheld performance",
-    answer: "Moonlight Peaks is currently listed as Steam Deck Verified and is playable, but independent testing reports long loading screens, small text, and uneven performance that may need post-launch optimization.",
-    updated: "2026-07-13",
-    sections: [
-      {
-        heading: "Compatibility snapshot",
-        table: { headers: ["Item", "Current status", "Source confidence"], rows: [["Steam Deck status", "Verified", "Steam / guide reporting"], ["Controller support", "Works out of the box", "Guide-tested"], ["Loading", "Frequent and sometimes long", "Guide-tested"], ["UI scaling", "Small text; limited adjustment", "Guide-tested"], ["Exact universal FPS", "TBD", "Hardware and scene dependent"]] },
-      },
-      { heading: "Recommended starting point", bullets: ["Start with default graphics settings.", "Steam Deck HQ recommends a 50 Hz refresh rate as a balance point.", "Leave TDP uncapped initially; aggressive caps may cause input lag.", "Test readability during the demo or refund window if small text is a concern.", "Install current game and SteamOS updates before troubleshooting."], note: "These are independent guide recommendations, not official guaranteed targets." },
-      { heading: "Known issues", bullets: ["Long or frequent loading screens", "Small dialogue and interface text", "Occasional stutter or inability to hold the highest frame-rate target", "Independent review reported crashes and a stuck-character incident", "Limited performance options"] },
-    ],
-    faqs: [
-      { question: "Is Moonlight Peaks Steam Deck Verified?", answer: "Yes, it is currently reported as Verified. Store status can change after updates." },
-      { question: "What frame rate should I use?", answer: "Steam Deck HQ recommends trying 50 Hz. Exact performance varies, so treat it as a starting point." },
-      { question: "How long is battery life?", answer: "An independent OLED test reported roughly four to five hours, but battery health, brightness, settings, and model can change the result." },
-    ],
-    related: ["switch", "ps5", "is-moonlight-peaks-worth-it"],
-    sources: [STEAM, STEAM_DECK_HQ],
-  },
-  "games-like-moonlight-peaks": {
-    slug: "games-like-moonlight-peaks",
-    title: "10 Games Like Moonlight Peaks – Similar Cozy Farming Sims",
-    description: "Try ten games like Moonlight Peaks, including farming sims with romance, magic, crafting, town stories, and different approaches to cozy progression.",
-    h1: "Games Like Moonlight Peaks",
-    eyebrow: "What to play next",
-    answer: "Start with Wylde Flowers or Sun Haven for magic and romance, Stardew Valley or Fields of Mistria for the farming-town loop, and Fae Farm for lighter co-op-friendly fantasy farming.",
-    updated: "2026-07-13",
-    sections: [
-      {
-        heading: "Comparison table",
-        table: {
-          headers: ["Game", "Platforms", "Why it is similar", "Key difference"],
+      { heading: "How to get the fishing rod", bullets: ["Complete Orlock's 'Meet the Townsfolk' quest first — this gates the fishing introduction.", "Around Night 2, find Noel by a river in the forest outside town. A cutscene will trigger.", "After speaking with Noel, a sparkling exclamation point appears in the forest above town.", "Catch three fish from nearby water and bring them to Noel at The Broken Lamp inn.", "Noel concedes you are a capable fisher, and you get to keep the rod."] },
+      { heading: "How fishing works", bullets: ["Stand at a valid water edge (river, lake, or Luna Bay) and equip the rod.", "Cast only when the interaction indicator is active.", "Watch the bite and reel timing prompts — do not mash immediately.", "If a fish you don't want approaches the bait (e.g., a large fish when you have the basic rod), reel in slightly to divert it — no need to re-cast.", "Use short fishing sessions between travel objectives to keep the night productive."] },
+      { heading: "Rod upgrades",
+        table: { headers: ["Rod", "Catchable sizes", "Upgrade requirement"],
           rows: [
-            ["Stardew Valley", "PC, consoles, mobile", "Farming, relationships, mines", "Pixel art and less supernatural focus"],
-            ["Fields of Mistria", "PC", "Town relationships and magical farming", "Anime-inspired presentation"],
-            ["Wylde Flowers", "PC, Switch, mobile", "Witchcraft, farming, romance", "More authored protagonist and story"],
-            ["Coral Island", "PC, PS5, Xbox", "Large relationship cast and farming", "Tropical environmental focus"],
-            ["Sun Haven", "PC, Switch", "Fantasy races, magic, farming", "More combat and RPG progression"],
-            ["My Time at Sandrock", "PC, consoles", "Town bonds, crafting, romance", "Workshop building over crop farming"],
-            ["Story of Seasons", "PC and consoles; varies by title", "Classic farm and relationship loop", "Less gothic and magical"],
-            ["Rune Factory", "PC and consoles; varies by title", "Farming, romance, action RPG combat", "Combat is much more central"],
-            ["Garden Witch Life", "PC and consoles", "Witchy garden and cozy crafting", "Smaller social and romance emphasis"],
-            ["Fae Farm", "PC and consoles", "Fantasy farming, magic, crafting", "Supports multiplayer and lighter social writing"],
-          ],
-        },
-      },
-      { heading: "Choose by the feature you want", bullets: ["For the strongest witch-life story: Wylde Flowers.", "For familiar farming depth: Stardew Valley.", "For action combat with romance: Rune Factory.", "For colorful fantasy and co-op: Fae Farm.", "For crafting-heavy town rebuilding: My Time at Sandrock.", "For a supernatural farming-RPG blend: Sun Haven."] },
+            ["Standard Fishing Rod", "Small only", "Free from Noel (Night 2)"],
+            ["Premium Fishing Rod", "Large + Small", "Upgrade at Howling Hammer; requires Gold Ingots"],
+            ["Enchanted Fishing Rod", "Large + Small", "Late-game upgrade; improved stats"]
+          ] } },
+      { heading: "Known fish species (partial — verified only)",
+        table: { headers: ["Species", "Location", "Time/condition", "Rarity", "Size", "Rod required"],
+          rows: [
+            ["Snuffy", "Luna Bay", "Any time", "Uncommon", "Small", "Any rod"],
+            ["Furybud", "Luna Bay", "Any time", "Rare", "Large", "Premium or Enchanted"],
+            ["Moonflutter", "Luna Bay", "Full moon", "Uncommon", "Large", "Premium or Enchanted"],
+            ["Gnasher", "Rivers flowing into Silverveil Lake", "Any time", "Uncommon", "Large", "Premium or Enchanted"],
+            ["Whisper", "Various waters", "TBD", "Common", "Small", "Any rod"],
+            ["Hammerhead Shark", "Luna Bay", "TBD", "Rare", "Large", "Premium or Enchanted"],
+            ["Carp", "Rivers and lakes", "TBD", "Common", "Small", "Any rod"]
+          ] },
+        note: "Fish species, locations, and requirements sourced from Neoseeker, TheGamer, and Bonus Action guides. Additional species exist but are not listed here until verified independently. The best gold-per-minute fish are Hammerhead Shark and Carp. Big catch variants sell for roughly 10x the regular price." },
+      { heading: "Fishing tips", bullets: ["Reel in slightly to scare away unwanted fish — no need to recast entirely.", "Brew the Rapid Reel Potion (Mandrake + Wolfsbane) to fish faster.", "Noel bets 250 Gold you can't catch 3 fish on your first attempt — take the challenge.", "A Whisper has a base sell value of 40 Gold (base) or 50 Gold (1-star). Higher-quality fish sell for more.", "Fish energy values matter too — some species give more stamina when eaten than others."] }
     ],
-    faqs: [
-      { question: "Which similar game has co-op?", answer: "Stardew Valley and Fae Farm are strong options if multiplayer matters." },
-      { question: "Which game is closest to the witchy theme?", answer: "Wylde Flowers and Garden Witch Life emphasize witchcraft, though their structure and tone differ." },
-      { question: "Are all ten games available everywhere?", answer: "No. Platform availability varies by title and can change; check the current official store before buying." },
+    faqs: [ { question: "Who gives you the fishing rod?", answer: "Noel, by a forest river around Night 2. Complete 'Meet the Townsfolk' first." }, { question: "What is the best fish for gold?", answer: "Hammerhead Shark and Carp top the gold-per-minute charts. Big catch variants sell for roughly 10x the regular price." }, { question: "How do I upgrade my fishing rod?", answer: "Upgrade at the Howling Hammer. The Premium Rod requires Gold Ingots." }, { question: "Can I catch large fish with the basic rod?", answer: "No. Large fish require the Premium or Enchanted Fishing Rod." } ],
+    related: ["beginner-guide", "farming-guide", "money-guide"], sources: [NS_FISHING, TG_FISHING, BA_FISHING]
+  },
+
+"steam-deck": {
+    slug: "steam-deck", title: "Moonlight Peaks Steam Deck — Performance, Settings & Known Issues",
+    description: "How Moonlight Peaks runs on Steam Deck: Verified status, performance, recommended settings (50 Hz), battery life, and known issues including long loading and small text.",
+    h1: "Moonlight Peaks on Steam Deck", eyebrow: "Handheld performance", updated: "2026-07-13",
+    answer: "Moonlight Peaks is Steam Deck Verified and playable, but independent testing from Steam Deck HQ reports long loading screens, small UI text, inconsistent performance, and occasional crashes. Recommended starting point: default graphics, 50 Hz refresh rate, and uncapped TDP.",
+    sections: [
+      { heading: "Compatibility snapshot",
+        table: { headers: ["Item", "Status", "Notes"],
+          rows: [
+            ["Steam Deck status", "Verified", "Official Steam Deck compatibility"],
+            ["ProtonDB rating", "Gold", "Community-tested compatibility"],
+            ["Controller support", "Works out of the box", "Full gamepad support"],
+            ["Loading screens", "Frequent and sometimes long", "Guide-tested — a common complaint"],
+            ["UI text", "Small text; limited scaling options", "Guide-tested — readability concern"],
+            ["Frame rate stability", "Mixed — dips below target", "Hardware and scene dependent"],
+            ["Exact universal FPS target", "TBD", "Varies by area and settings"]
+          ] } },
+      { heading: "Recommended settings", bullets: ["Start with default graphics settings.", "Steam Deck HQ recommends trying a 50 Hz refresh rate as a balance between smoothness and stability.", "Leave TDP uncapped initially — aggressive power limits can cause input lag.", "Test readability during the demo or within the Steam refund window if small text is a concern.", "Install the latest game updates and SteamOS updates before troubleshooting.", "Adjust in-game settings and SteamOS Quick Access Menu (QAM) settings together for best results."], note: "Settings recommendations from independent guide testing, not official developer targets." },
+      { heading: "Known issues", bullets: ["Long or frequent loading screens between areas.", "Small dialogue and interface text — limited UI scaling options.", "Occasional stutter or inability to maintain a consistent frame rate.", "Independent review from Steam Deck HQ reported crashes and a stuck-character incident.", "Limited in-game performance options compared to desktop PC."] },
+      { heading: "Battery life", paragraphs: ["An independent OLED model test reported roughly 4-5 hours of battery life. Actual battery duration varies with screen brightness, TDP settings, background processes, and battery health. The LCD model may differ."] }
     ],
-    related: ["is-moonlight-peaks-worth-it", "romance-guide", "farming-guide"],
-    sources: [OFFICIAL_SITE],
+    faqs: [ { question: "Is Moonlight Peaks Steam Deck Verified?", answer: "Yes. It is currently listed as Verified on Steam. Store status can change after game updates." }, { question: "What frame rate should I target?", answer: "Steam Deck HQ recommends trying 50 Hz. Exact performance varies by scene." }, { question: "How is battery life?", answer: "Independent OLED testing reports roughly 4-5 hours. Results vary with settings and model." }, { question: "Does the text size affect gameplay?", answer: "Independent reviewers note small text with limited scaling options — it may be a concern on the smaller screen." } ],
+    related: ["switch", "ps5", "is-moonlight-peaks-worth-it"], sources: [STEAM, SDHQ]
+  },
+
+"games-like-moonlight-peaks": {
+    slug: "games-like-moonlight-peaks", title: "10 Games Like Moonlight Peaks — Similar Cozy Farming Sims",
+    description: "Love Moonlight Peaks? Try Stardew Valley, Fields of Mistria, Wylde Flowers, Coral Island and more cozy farming sims with romance, magic, crafting, and town-building.",
+    h1: "Games Like Moonlight Peaks", eyebrow: "What to play next", updated: "2026-07-13",
+    answer: "For witchy romance and magic: Wylde Flowers. For farming depth: Stardew Valley. For co-op: Stardew Valley or Fae Farm. For the closest supernatural farming feel: Sun Haven.",
+    sections: [
+      { heading: "Comparison table",
+        table: { headers: ["Game", "Platforms", "Why it's similar", "Key difference"],
+          rows: [
+            ["Stardew Valley", "PC, consoles, mobile", "Farming, relationships, mining, crafting", "Pixel art; less supernatural focus; supports co-op"],
+            ["Fields of Mistria", "PC", "Town relationships, magical farming", "Anime-inspired art style; early access"],
+            ["Wylde Flowers", "PC, Switch, mobile", "Witchcraft, farming, fully-voiced romance", "More authored protagonist and linear story"],
+            ["Coral Island", "PC, PS5, Xbox", "Large relationship cast, farming, ocean cleanup", "Tropical environmental focus; 28 romance options"],
+            ["Sun Haven", "PC, Switch", "Fantasy races, magic, farming, combat", "More RPG combat and skill tree progression"],
+            ["My Time at Sandrock", "PC, consoles", "Town bonds, crafting, romance", "Workshop building instead of pure crop farming"],
+            ["Story of Seasons series", "PC and consoles (varies)", "Classic farm and relationship loop", "Less gothic, more traditional pastoral farming"],
+            ["Rune Factory series", "PC and consoles (varies)", "Farming, romance, dungeon combat", "Combat is much more central to gameplay"],
+            ["Garden Witch Life", "PC, consoles", "Witchy garden, cozy crafting, potions", "Smaller social and romance emphasis"],
+            ["Fae Farm", "PC, Switch", "Fantasy farming, magic, crafting, co-op", "Lighter social writing; supports multiplayer"]
+          ] } },
+      { heading: "Choose by what you want most", bullets: ["Witchy story + romance: Wylde Flowers.", "Farming depth + endless play: Stardew Valley.", "Action combat with romance: Rune Factory.", "Co-op fantasy farming: Fae Farm.", "Crafting-heavy town rebuilding: My Time at Sandrock.", "Supernatural RPG-farming blend: Sun Haven.", "Underwater + land farming: Coral Island.", "Cozy witch garden + potions: Garden Witch Life."] }
+    ],
+    faqs: [ { question: "Which similar game has co-op?", answer: "Stardew Valley and Fae Farm are strong options if multiplayer matters." }, { question: "Which game is closest to the witchy theme?", answer: "Wylde Flowers has the strongest witchcraft and narrative focus. Garden Witch Life is a lighter alternative." }, { question: "Are all ten games on Switch?", answer: "Most are, but check each game's current store listing — platform availability varies by title." } ],
+    related: ["is-moonlight-peaks-worth-it", "romance-guide", "farming-guide"], sources: [OFFICIAL_SITE]
   },
 };
 
