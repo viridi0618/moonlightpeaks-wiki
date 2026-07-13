@@ -5,11 +5,5 @@
   "buildCommand": "npm run build",
   "cleanUrls": true,
   "outputDirectory": "out",
-  "redirects": [
-    {
-      "source": "/index",
-      "destination": "/brainrot-index",
-      "permanent": true
-    }
-  ]
+  "redirects": []
 }
