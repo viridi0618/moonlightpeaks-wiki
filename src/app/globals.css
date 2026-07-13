@@ -24,6 +24,7 @@ body {
   background:
     radial-gradient(circle at 15% 0%, rgba(86, 48, 124, 0.28), transparent 30rem),
     linear-gradient(180deg, #0b0716 0%, var(--color-background) 100%);
+  background-attachment: fixed;
   color: var(--color-foreground);
   font-family: var(--font-sans);
 }
