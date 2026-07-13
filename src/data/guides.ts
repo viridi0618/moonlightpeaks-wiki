@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 export type GuideTable = {
   headers: string[];
   rows: string[][];
@@ -55,36 +53,6 @@ export const GOOGLE_PLAY: GuideSource = {
   label: "Moonlight Peaks on Google Play",
   url: "https://play.google.com/store/apps/details?id=com.xseed.moonlightpeaks",
   level: "Official",
-};
-
-const PC_GAMER_SAMAEL: GuideSource = {
-  label: "PC Gamer: Samael romance unlock",
-  url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-date-samael-romance-unlock/",
-  level: "Guide",
-};
-
-const PC_GAMER_TREE: GuideSource = {
-  label: "PC Gamer: fallen tree location",
-  url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-lift-the-fallen-tree-location/",
-  level: "Guide",
-};
-
-const PC_GAMER_TREASURE: GuideSource = {
-  label: "PC Gamer: Elvira treasure hunt",
-  url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-treasure-hunt-clues-location/",
-  level: "Guide",
-};
-
-const PC_GAMER_DATES: GuideSource = {
-  label: "PC Gamer: dating guide",
-  url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-date-how-to/",
-  level: "Guide",
-};
-
-const STEAM_DECK_HQ: GuideSource = {
-  label: "Steam Deck HQ review and performance notes",
-  url: "https://steamdeckhq.com/game-reviews/moonlight-peaks/",
-  level: "Guide",
 };
 
 const PCG_SAMAEL: GuideSource = { label: "PC Gamer — How to unlock Samael romance", url: "https://www.pcgamer.com/games/life-sim/moonlight-peaks-date-samael-romance-unlock/", level: "Guide" };
@@ -164,16 +132,16 @@ multiplayer: {
     sections: [
       { heading: "Game overview", paragraphs: ["Moonlight Peaks is a supernatural farming and life simulation by Little Chicken Game Company, published by XSEED Games / Marvelous Europe. You play as Dracula's child, leaving home to build a life in your mother's old town — a community of vampires, werewolves, witches, seers, mermaids, and more. You farm by moonlight, cast spells, brew potions, explore mines, fish, and build relationships with around two dozen romanceable characters. There is no combat — the game is a pure cozy life-sim."] },
       { heading: "Character creation", paragraphs: ["You'll choose a name, a farm name, and a name for your Hellkitten companion. Appearance customization is extensive — hairstyles, outfits, and accessories — but purely cosmetic. Your appearance does not affect gameplay, romance options, or story progression. You can purchase additional clothing later in the game."] },
-      { heading: "First night walkthrough", bullets: ["Wake up in your coffin around 6 PM. This is your first night as an independent vampire.", "Meet your uncle Orlock — he's usually drunk and unreliable, but he gives you the Broken Wand and a basic farm plot.", "Plant your first Blood Grape. This is the tutorial crop and introduces the farming loop.", "Visit Town Hall to register with Mayor Brook. They are not particularly friendly — don't take it personally.", "Walk around town and introduce yourself to residents. Building relationships early saves backtracking.", "Keep the Broken Wand — do not sell or discard it. A repair quest unlocks spellcasting later (around Night 18)."] },
+      { heading: "First night walkthrough", bullets: ["Wake up in your coffin around 6 PM. This is your first night as an independent vampire.", "Meet your uncle Orlock — he's usually drunk and unreliable, but he gives you the Broken Wand and a basic farm plot.", "Plant your first Blood Grape. This is the tutorial crop and introduces the farming loop.", "Visit Town Hall to register with Mayor Brook. They are not particularly friendly — don't take it personally.", "Walk around town and introduce yourself to residents. Building relationships early saves backtracking.", "Keep the Broken Wand — do not sell or discard it. Guides commonly report the repair quest around Night 18, but timing may vary by version, patch, pace, or quest order."] },
       { heading: "First week priorities (Days 1-7)", bullets: ["Grow and harvest Blood Grapes each night to build a crop reserve.", "Meet Noel by a forest river around Night 2 to start the fishing rod quest.", "Collect forageables (flowers, shells, herbs) as early income — sell surplus through Chester's shipping bin.", "Save Copper Ore and Iron Ore for tool upgrades. Do not sell ore early.", "Visit Webb of Wonders (Sabrina's shop) as soon as it opens — buy Arborascend and other early spells.", "Start one Keg as soon as the crafting menu unlocks. Community reports suggest grape wine improves crop profitability.", "Talk to every character you pass. Relationships build slowly, so starting early avoids a late-game grind."], note: "Timing estimates use \"around\" and \"usually\" because exact triggers may vary with your play pace and quest order." },
       { heading: "Tools and how to unlock them",
         table: { headers: ["Tool", "How to get it", "Key use"],
           rows: [ ["Shovel", "Start of the game", "Prepare soil for planting"], ["Watering Can", "Start of the game", "Water non-enchanted crops"], ["Fishing Rod", "Meet Noel by the forest river (around Night 2)", "Fish in rivers, lakes, and Luna Bay"], ["Broken Wand", "Given by Orlock on Night 1", "Keep it — repair quest unlocks spells later"], ["Pickaxe", "Unlock the mines through progression", "Mine Copper, Iron, Gold, and gems"], ["Axe", "Progression-based unlock", "Clear wood debris and harvest trees"] ] } },
       { heading: "Key mechanics to understand early", bullets: ["Night cycle: The game runs on nights, not days. You wake at 6 PM and must return before dawn.", "Stamina: Actions consume stamina. Eat food to replenish — keep a stack of cooked dishes.", "Mana: Shared between farm spells and quest spells. Do not empty your mana before a spell-gated quest.", "Tool wheel: Use the tool wheel (not inventory) to switch tools quickly.", "Chester's shipping bin: Sell surplus items through the animated chest near your farm."] },
       { heading: "20 beginner tips",
-        bullets: [ "1. Keep the Broken Wand — a repair quest unlocks around Night 18.", "2. Build at least one Keg early. Processed goods sell for more than raw crops.", "3. Talk to every resident during your first week — relationship progress is slow but compounds.", "4. Do not sell Copper or Iron Ore. Tool upgrades require significant quantities.", "5. Use the tool wheel for fast switching instead of opening inventory.", "6. When fishing, reel in slightly to scare away unwanted fish (don't waste time on large fish if you have the basic rod).", "7. Community reports suggest the statue near the Florist shop gives a Warp Whistle on your first day if you have time to grab it.", "8. Plant crops suited to the current season — Luna sells seasonal seeds.", "9. Forage flowers and shells for quick early gold before crops mature.", "10. Keep one sample of every new crop, fish, and forageable before selling.", "11. Do not skip the Town Hall registration — it gates further quests.", "12. Visit Sabrina at Webb of Wonders as early as possible for spells and upgrades.", "13. Leave spare mana before exploring — spell-gated obstacles are common.", "14. Upgrade tools to Iron level first — it unlocks access to most harvestable materials.", "15. Cooking stretches your stamina further than eating raw ingredients.", "16. Check the job board daily for extra income and relationship boosts.", "17. The almanac tracks spell patterns — use it instead of guessing casts.", "18. Build multiple Kegs once your crop supply is steady — passive income from processing is reliable.", "19. Save rare forageables and quest-marked items — don't accidentally sell them.", "20. Experiment with the demo before committing — it covers the opening hours." ] }
+        bullets: [ "1. Keep the Broken Wand — guides commonly report its repair quest around Night 18, though timing may vary by version or quest order.", "2. Build at least one Keg early. Processed goods sell for more than raw crops.", "3. Talk to every resident during your first week — relationship progress is slow but compounds.", "4. Do not sell Copper or Iron Ore. Tool upgrades require significant quantities.", "5. Use the tool wheel for fast switching instead of opening inventory.", "6. When fishing, reel in slightly to scare away unwanted fish (don't waste time on large fish if you have the basic rod).", "7. Community reports suggest the statue near the Florist shop gives a Warp Whistle on your first day if you have time to grab it.", "8. Plant crops suited to the current season — Luna sells seasonal seeds.", "9. Forage flowers and shells for quick early gold before crops mature.", "10. Keep one sample of every new crop, fish, and forageable before selling.", "11. Do not skip the Town Hall registration — it gates further quests.", "12. Visit Sabrina at Webb of Wonders as early as possible for spells and upgrades.", "13. Leave spare mana before exploring — spell-gated obstacles are common.", "14. Upgrade tools to Iron level first — it unlocks access to most harvestable materials.", "15. Cooking stretches your stamina further than eating raw ingredients.", "16. Check the job board daily for extra income and relationship boosts.", "17. The almanac tracks spell patterns — use it instead of guessing casts.", "18. Build multiple Kegs once your crop supply is steady — passive income from processing is reliable.", "19. Save rare forageables and quest-marked items — don't accidentally sell them.", "20. Experiment with the demo before committing — it covers the opening hours." ] }
     ],
-    faqs: [ { question: "What should I do on my first night?", answer: "Plant Blood Grapes, register at Town Hall, meet the townsfolk, and keep the Broken Wand — a repair quest unlocks spellcasting later." }, { question: "How do I get the fishing rod?", answer: "Meet Noel by the forest river around Night 2. Catch three fish and bring them to The Broken Lamp inn." }, { question: "When do I unlock spells?", answer: "Around Night 18, a wand repair quest becomes available through Luna and Noel. This unlocks the Aquaflux spell." }, { question: "Should I sell ore early?", answer: "No. Copper and Iron Ore are needed for tool upgrades and crafting stations." } ],
+    faqs: [ { question: "What should I do on my first night?", answer: "Plant Blood Grapes, register at Town Hall, meet the townsfolk, and keep the Broken Wand — a repair quest unlocks spellcasting later." }, { question: "How do I get the fishing rod?", answer: "Meet Noel by the forest river around Night 2. Catch three fish and bring them to The Broken Lamp inn." }, { question: "When do I unlock spells?", answer: "Guides commonly report the wand repair quest around Night 18 through Luna and Noel. It unlocks Aquaflux, but timing may vary by version, patch, pace, or quest order." }, { question: "Should I sell ore early?", answer: "No. Copper and Iron Ore are needed for tool upgrades and crafting stations." } ],
     related: ["farming-guide", "fishing-guide", "money-guide", "spells-guide"], sources: [OFFICIAL_SITE, STEAM, LG_BEGINNER, EG_BEGINNER, IGN_TIPS]
   },
 
@@ -253,7 +221,7 @@ multiplayer: {
       { heading: "Which quest is this?", paragraphs: ["This is part of 'The Mysterious Bay' questline. The fallen tree blocks a waterfall path, and removing it is required to progress the quest."] },
       { heading: "Step-by-step checklist", bullets: ["1. Advance 'The Mysterious Bay' until the task prompts you to clear access.", "2. Go to Webb of Wonders and buy the Arborascend spell from Sabrina.", "3. Ensure you have enough mana before leaving town — the spell takes mana to cast.", "4. Travel to Moonlit Pines. Find Luna's seed cart as a landmark.", "5. Walk west of the nearby stairs — you'll see a small waterfall blocked by a fallen tree.", "6. Stand near the log and cast Arborascend to move it.", "7. Continue through the cleared path to progress the quest."] },
       { heading: "How to get Arborascend", paragraphs: ["Arborascend is sold by Sabrina at Webb of Wonders. If it is not listed yet, continue your wand and magic quests and check again. The spell is part of normal spell progression and does not require special materials."] },
-      { heading: "Common mistakes to avoid", bullets: ["Do not search the Howling Marshes — the tree is in Moonlit Pines, not the swamp.", "Do not search Luna Bay itself before clearing the route — you cannot reach it yet.", "Do not spend all mana on watering magical crops before the trip — Arborascend requires mana.", "Do not guess the spell pattern repeatedly. If you've forgotten it, check the in-game almanac.", "If Arborascend is not in Sabrina's shop, you likely need to advance the wand repair quest first (around Night 18)."] }
+      { heading: "Common mistakes to avoid", bullets: ["Do not search the Howling Marshes — the tree is in Moonlit Pines, not the swamp.", "Do not search Luna Bay itself before clearing the route — you cannot reach it yet.", "Do not spend all mana on watering magical crops before the trip — Arborascend requires mana.", "Do not guess the spell pattern repeatedly. If you've forgotten it, check the in-game almanac.", "If Arborascend is not in Sabrina's shop, guides suggest advancing the wand repair quest first; the often-reported Night 18 timing may vary by version or quest order."] }
     ],
     faqs: [ { question: "Which quest uses the fallen tree?", answer: "The Mysterious Bay." }, { question: "Which spell moves the tree?", answer: "Arborascend, purchased from Sabrina at Webb of Wonders." }, { question: "Is the tree in Howling Marshes?", answer: "No. It is in Moonlit Pines, near Luna's seed cart and cottage." }, { question: "Why can't I find the tree?", answer: "Make sure you are west of the stairs near Luna's cart, not deeper into Moonlit Pines." } ],
     related: ["spells-guide", "samael-romance", "beginner-guide"], sources: [PCG_TREE]
@@ -261,7 +229,7 @@ multiplayer: {
 
 "is-moonlight-peaks-worth-it": {
     slug: "is-moonlight-peaks-worth-it", title: "Is Moonlight Peaks Worth It? — Price, Platforms & What Players Say",
-    description: "Should you buy Moonlight Peaks? Compare price ($34.99), platforms, Steam sentiment (Very Positive), gameplay systems, and honest reasons to buy now or wait.",
+    description: "Should you buy Moonlight Peaks? Compare platforms, Steam sentiment, gameplay systems, demo availability, and honest reasons to buy now or wait.",
     h1: "Is Moonlight Peaks Worth It?", eyebrow: "Buying guide", updated: "2026-07-13",
     answer: "For players who want a full single-player farming sim with a strong gothic-vampire atmosphere, Moonlight Peaks is a reasonable purchase. Players sensitive to slow travel, loading screens, or early technical issues may prefer to wait for patches or try the free demo first.",
     sections: [
@@ -270,7 +238,7 @@ multiplayer: {
         table: { headers: ["Platform", "Approximate price", "Demo"],
           rows: [ ["Steam (PC/macOS)", "$34.99 (varies by region and sale)", "Yes — Steam demo"], ["Nintendo Switch", "~$34.99 (regional)", "Yes — eShop demo"], ["Nintendo Switch 2", "~$39.99 (+$5 upgrade from Switch 1)", "TBD"], ["Android (Google Play)", "Price varies", "No separate demo"] ] },
         note: "Prices are community-reported approximations. Always confirm the current listing before buying. Prices may vary by region, edition, and sale period." },
-      { heading: "Steam reception", bullets: ["Current public rating: Very Positive.", "Peak concurrent players: 5,422.", "59 Steam achievements available at launch.", "Ratings change over time as more owners post reviews — check the live Steam page for the latest percentage."] },
+      { heading: "Steam reception", bullets: ["As of the latest check, the public rating was Very Positive; this changes as reviews are added.", "A public tracking snapshot reported a peak of 5,422 concurrent players. This is time-sensitive, not a permanent player count.", "Steam listed 59 achievements at launch; the total may vary after updates.", "Check the live Steam page for the latest rating, review count, and feature list."] },
       { heading: "What you get", bullets: ["Farming with cursed and enchanted crops, seasonal planning, and keg processing.", "Fishing with rod upgrades, multiple species, and location variety.", "Spellcasting — Aquaflux, Arborascend, Ethereal Hands, Maturio, and more through wand progression.", "Potion brewing — Alter Ego Elixir, Love Potion, skill tonics.", "Mining and foraging across caves, forests, and beaches.", "Romance with around two dozen candidates across seven supernatural families.", "Marriage with a unique vampire-spouse transformation mechanic.", "Shapeshifting forms — Bat Form (speed), Cat Form (creature interaction), Mermaid Form (underwater).", "Nokturna card minigame with collectible cards.", "Home and farm customization with gothic decor and upgrades.", "Seven distinct family storylines woven into the main plot."] },
       { heading: "Reasons to buy now", bullets: ["You enjoy cozy farming sims and want a darker, gothic setting.", "You value atmosphere and originality over mechanical innovation.", "You play solo — multiplayer is not part of this game's design.", "The demo left you wanting more.", "You like relationship-heavy games with deep character storylines.", "Platform: You own a PC, Switch, or Android device (the only supported platforms)."] },
       { heading: "Reasons to wait", bullets: ["You want co-op or multiplayer — this is a purely single-player game.", "You only own a PS5 or Xbox — no console port has been announced.", "Steam Deck users: Independent reviews note long loading screens, small text, and occasional stutter.", "You want fully-mapped crop prices, gift tables, and fish species — community data is still growing.", "You prefer to wait for post-launch patches fixing performance and UI scaling issues.", "Budget: The game launched at full price. If you prefer to wait for a sale, that's a valid approach."] }
@@ -283,14 +251,14 @@ multiplayer: {
     slug: "money-guide", title: "How to Make Money Fast in Moonlight Peaks — Gold Farming Guide",
     description: "Best ways to earn coins in Moonlight Peaks: ranked money-making methods, keg processing, fishing for profit, job board strategy, and what NOT to sell early.",
     h1: "How to Make Money in Moonlight Peaks", eyebrow: "Economy guide", updated: "2026-07-13",
-    answer: "Use a mixed economy: maintain profitable crops, complete job board requests, fish during route downtime, and process surplus crops through Kegs. Community reports suggest grape wine processing significantly improves crop value. Do not sell ore, quest items, or your only sample of a new crop early.",
+    answer: "Use a mixed economy: maintain crops with guide-reported profit potential, complete job board requests, fish during route downtime, and test Keg processing with surplus. Community reports suggest grape wine can improve crop value, but exact returns may vary by version or patch.",
     sections: [
       { heading: "Ranked money-making methods",
         table: { headers: ["Rank", "Method", "Why it works", "Confidence"],
           rows: [
             ["1", "Repeatable crops + Kegs", "Most reliable income. Process pumpkins and nightshade through Kegs for a value multiplier.", "System confirmed; exact GPM values TBD"],
             ["2", "Job board", "Targeted rewards for items you already have. Complete requests on existing routes.", "Guide-backed"],
-            ["3", "Fishing", "Uses time between crop maintenance. Hammerhead Shark and Carp top the gold-per-minute charts.", "System confirmed; species values from guide sources"],
+            ["3", "Fishing", "Uses time between crop maintenance. Guide tables currently place Hammerhead Shark and Carp near the top for gold per minute; values may vary by patch.", "Guide-reported; currently being verified"],
             ["4", "Foraging surplus", "Flowers, shells, herbs — zero cost, pure profit. Sell what you don't need for quests.", "Values vary; keep quest items"],
             ["5", "Drying Racks", "Turn foraged herbs into higher-value dried goods. Cheap to build.", "Community-reported"]
           ] } },
@@ -333,26 +301,26 @@ multiplayer: {
     slug: "spells-guide", title: "Moonlight Peaks Spells Guide — Magic, Mana & How to Unlock Spells",
     description: "How to unlock magic in Moonlight Peaks: spell list with effects, mana management, wand upgrades, and shapeshifting forms. All known spells from Eurogamer and PC Gamer guides.",
     h1: "Moonlight Peaks Spells Guide", eyebrow: "Magic guide", updated: "2026-07-13",
-    answer: "Repair your broken wand through early story progression (around Night 18 via Luna and Noel), manage mana between farm spells and quest spells, and upgrade to the Witch's Wand (5,000g) for Aquaflux II which waters 48 crops at once.",
+    answer: "Repair the broken wand through story progression; guides commonly report the trigger around Night 18 via Luna and Noel. Guide sources also report a 5,000g Witch's Wand and Aquaflux II coverage of 48 crops, but the timing, price, and coverage may vary by version or patch.",
     sections: [
-      { heading: "Getting started with the wand", bullets: ["Keep the Broken Wand from the opening scene with Orlock. Do not sell or discard it.", "Around Night 18, visit Luna to trigger the wand repair quest.", "Noel will repair your wand, unlocking spellcasting and the Aquaflux spell.", "Upgrade to the Witch's Wand (5,000g from Sabrina) for Aquaflux II — waters 48 crops at once.", "Use the in-game almanac to review learned spell patterns — guessing wastes mana."] },
+      { heading: "Getting started with the wand", bullets: ["Keep the Broken Wand from the opening scene with Orlock. Do not sell or discard it.", "Guides commonly report visiting Luna around Night 18 to trigger the wand repair quest; timing may vary by version, patch, pace, or quest order.", "Noel will repair your wand, unlocking spellcasting and the Aquaflux spell.", "Guide sources report a 5,000g Witch's Wand from Sabrina and Aquaflux II coverage of up to 48 crops; both details are currently being verified and may vary by version or patch.", "Use the in-game almanac to review learned spell patterns — guessing wastes mana."] },
       { heading: "Known spell reference",
         table: { headers: ["Spell", "Effect", "How to unlock", "Cost"],
           rows: [
-            ["Aquaflux I", "Water multiple crops at once", "Wand repair quest (around Night 18)", "Free (starter spell)"],
-            ["Aquaflux II", "Water 48 crops at once", "Witch's Wand upgrade (5,000g)", "5,000g"],
+            ["Aquaflux I", "Water multiple crops at once", "Guide-reported wand repair timing: around Night 18; may vary", "Guide-reported as a starter spell"],
+            ["Aquaflux II", "Guide-reported coverage: up to 48 crops; may vary by patch", "Witch's Wand upgrade", "Guide-reported 5,000g; verify in the current version"],
             ["Arborascend I", "Lift fallen trees and wooden obstacles", "Buy from Sabrina at Webb of Wonders", "Purchase price TBD"],
             ["Ethereal Hands I", "Remote interaction with objects", "TBD", "TBD"],
             ["Maturio I", "Speed up crop growth", "TBD", "TBD"],
-            ["Levitate", "Utility movement spell", "Spell shop", "3,000g"],
-            ["Mind's Eye", "Exploration utility", "Spell shop", "2,000g"],
-            ["Tomorrow's Tears", "Time manipulation", "Late game progression", "10,000g"]
+            ["Levitate", "Utility movement spell", "Spell shop", "Guide-reported 3,000g; verify in the current version"],
+            ["Mind's Eye", "Exploration utility", "Spell shop", "Guide-reported 2,000g; verify in the current version"],
+            ["Tomorrow's Tears", "Time manipulation", "Late game progression", "Guide-reported 10,000g; verify in the current version"]
           ] },
         note: "Spell names confirmed by Eurogamer and PC Gamer guide data. Unlock steps and costs are guide-reported and may vary slightly with game version or quest order." },
       { heading: "Mana management", bullets: ["Mana is shared across farming spells and quest spells — do not empty the meter before a spell-gated quest.", "Use the Mana Extractor (crafted with 3 Copper Bars + 3 Iron Bars, bring to Sabrina) to increase maximum mana.", "Rose Quartz from the Crystal Caves is required for some mana upgrades.", "Food and potions can restore mana — keep restorative items in your inventory.", "Use ordinary tools for routine tasks. Save mana for spells that have no non-magical alternative."] },
       { heading: "Shapeshifting forms", paragraphs: ["Official descriptions confirm multiple shapeshifting forms unlock through story progression: Bat Form (increased movement speed and aerial traversal), Cat Form (creature interaction), and Mermaid Form (underwater exploration). Exact unlock steps are progression-sensitive — this first-batch guide does not publish an unverified complete list."] }
     ],
-    faqs: [ { question: "How do I unlock spells?", answer: "Complete the wand repair quest around Night 18. Visit Luna, then Noel repairs your wand. This unlocks Aquaflux and spellcasting." }, { question: "Where do I get Arborascend?", answer: "Buy from Sabrina at Webb of Wonders after progressing the wand quest." }, { question: "How do I increase mana?", answer: "Craft a Mana Extractor (3 Copper Bars + 3 Iron Bars) and bring it to Sabrina. Rose Quartz from the Crystal Caves may also be required." }, { question: "When can I get the Witch's Wand?", answer: "Buy from Sabrina for 5,000g. It unlocks Aquaflux II which waters 48 crops at once." } ],
+    faqs: [ { question: "How do I unlock spells?", answer: "Guides commonly report the wand repair quest around Night 18: visit Luna, then Noel repairs your wand. This unlocks Aquaflux and spellcasting, but timing may vary by version, patch, pace, or quest order." }, { question: "Where do I get Arborascend?", answer: "Buy from Sabrina at Webb of Wonders after progressing the wand quest." }, { question: "How do I increase mana?", answer: "Craft a Mana Extractor (3 Copper Bars + 3 Iron Bars) and bring it to Sabrina. Rose Quartz from the Crystal Caves may also be required." }, { question: "When can I get the Witch's Wand?", answer: "Guide sources report a 5,000g price at Sabrina and Aquaflux II coverage of up to 48 crops. The price and coverage are currently being verified and may vary by version or patch." } ],
     related: ["fallen-tree", "beginner-guide", "farming-guide"], sources: [OFFICIAL_SITE, PCG_TREE]
   },
 
@@ -360,14 +328,14 @@ multiplayer: {
     slug: "farming-guide", title: "Moonlight Peaks Farming Guide — All Crops, Seasons & Profit Tips",
     description: "Complete Moonlight Peaks farming guide: cursed and enchanted crops, seasonal planting by crop type, keg processing strategy, and which crops to plant for maximum profit.",
     h1: "Moonlight Peaks Farming Guide", eyebrow: "Farm systems", updated: "2026-07-13",
-    answer: "Grow cursed crops (pumpkins, nightshade, shadow wheat) for sustenance and income, and enchanted crops (roses, luna seeds, ghost peppers) for higher profit — but enchanted crops require the Aquaflux spell to water. Build Kegs early to process raw crops into higher-value goods.",
+    answer: "Guide sources suggest cursed crops for steady food and income, with enchanted crops offering higher profit potential at a mana cost. Exact rankings and processing returns are community-reported snapshots and may vary by version or patch.",
     sections: [
       { heading: "Farming basics", bullets: ["Prepare soil with the shovel, plant seeds suited to the current season, and water daily.", "Cursed crops can be watered normally and grow year-round.", "Enchanted crops require the Aquaflux spell to water — without it, they wither.", "Harvest on time and keep one sample of each new crop before selling.", "Process crops through Kegs for significantly higher sell prices — pumpkins and nightshade benefit most.", "Use Drying Racks for foraged herbs — cheap to build and provide steady supplementary income."] },
       { heading: "Crop types and planning",
         table: { headers: ["Type", "Examples", "Watering", "Season", "Strategy"],
           rows: [
             ["Cursed crops", "Pumpkins, Nightshade, Shadow Wheat", "Normal watering can", "Year-round", "Staple food + profit. Process through Kegs."],
-            ["Enchanted crops", "Enchanted Roses, Luna Seeds, Ghost Peppers", "Requires Aquaflux spell", "Seasonal or year-round", "High profit but mana cost. Only expand after getting Aquaflux II."],
+            ["Enchanted crops", "Enchanted Roses, Luna Seeds, Ghost Peppers", "Requires Aquaflux spell", "Seasonal or year-round", "Community guides report high profit potential at a mana cost; rankings may vary by patch."],
             ["Trees", "Orchard varieties", "Normal", "Year-round", "Long-term investment. Leave permanent space."],
             ["Herbs", "Multiple varieties", "Normal or forage", "Seasonal", "Use for cooking and potions. Process extras through Drying Racks."],
             ["Mushrooms", "Multiple varieties", "Forage", "Seasonal", "Not all are edible — verify before cooking."]
@@ -376,17 +344,17 @@ multiplayer: {
       { heading: "Crop profitability ranking",
         table: { headers: ["Tier", "Crop", "Type", "Season", "Notes"],
           rows: [
-            ["S", "Pumpkins", "Cursed", "All year", "Highest GPM among cursed crops. Keg-processed value is excellent."],
-            ["A", "Nightshade", "Cursed", "All year", "Strong secondary crop. Process through Kegs."],
-            ["A", "Enchanted Roses", "Enchanted", "All year", "High profit but requires Aquaflux mana."],
-            ["B", "Luna Seeds", "Enchanted", "Seasonal", "Top enchanted crop during seasonal window. Miss the window and wait a full cycle."],
-            ["B", "Ghost Peppers", "Enchanted", "All year", "Decent enchanted option. Lower GPM than roses."],
-            ["C", "Shadow Wheat", "Cursed", "All year", "Lowest GPM among staples. Use for food, not profit."]
+            ["S", "Pumpkins", "Cursed", "All year", "Community-reported as a leading cursed crop by GPM; verify current prices."],
+            ["A", "Nightshade", "Cursed", "All year", "Community-ranked secondary crop; exact profitability may vary."],
+            ["A", "Enchanted Roses", "Enchanted", "All year", "Community guides report high profit potential; requires Aquaflux mana."],
+            ["B", "Luna Seeds", "Enchanted", "Seasonal", "Community guides rank it highly during its seasonal window; exact profitability may vary."],
+            ["B", "Ghost Peppers", "Enchanted", "All year", "Community-ranked option, often below roses; exact GPM may vary."],
+            ["C", "Shadow Wheat", "Cursed", "All year", "Community charts rank it lower among staples; current GPM is still being verified."]
           ] },
         note: "Tier list adapted from community guide GPM (gold per minute) calculations. Exact sell prices are still being verified and may change with patches." },
       { heading: "Keg and processing strategy", bullets: ["Build at least 3 Kegs as soon as the crafting menu unlocks.", "Keg-processed pumpkins sell for roughly 3x the raw crop price (guide-reported estimate).", "Keep Kegs running every night — the processing time creates cash flow but pays off.", "Drying Racks are a cheaper secondary option for herbs and forageables.", "Do not process quest-required crops or your only sample of a new variety."] }
     ],
-    faqs: [ { question: "How many seeds are in Moonlight Peaks?", answer: "Guide datasets from Eurogamer describe approximately 53 seed varieties. Exact membership and sell prices are still being independently verified." }, { question: "What is the best crop per season?", answer: "Pumpkins top the GPM chart for cursed crops year-round. Luna Seeds are the top enchanted crop during their seasonal window." }, { question: "Do I need Aquaflux to water all crops?", answer: "No. Cursed crops can be watered normally. Only enchanted crops require Aquaflux." }, { question: "How many Kegs should I build?", answer: "Start with at least 3. Add more as your crop supply grows." } ],
+    faqs: [ { question: "How many seeds are in Moonlight Peaks?", answer: "Guide datasets from Eurogamer describe approximately 53 seed varieties. Exact membership and sell prices are still being independently verified." }, { question: "What is the best crop per season?", answer: "Community GPM guides currently rank pumpkins highly among cursed crops and Luna Seeds highly in their seasonal window. Exact profitability may vary by version or patch." }, { question: "Do I need Aquaflux to water all crops?", answer: "No. Cursed crops can be watered normally. Only enchanted crops require Aquaflux." }, { question: "How many Kegs should I build?", answer: "Start with at least 3. Add more as your crop supply grows." } ],
     related: ["money-guide", "beginner-guide", "fishing-guide"], sources: [OFFICIAL_SITE]
   },
 
@@ -394,7 +362,7 @@ multiplayer: {
     slug: "fishing-guide", title: "Moonlight Peaks Fishing Guide — Rod, Fish Locations & Tips",
     description: "How to get the fishing rod from Noel on Night 2, all fish species with spawn locations, rod upgrades, bite timing tips, and the best fish for gold.",
     h1: "Moonlight Peaks Fishing Guide", eyebrow: "Fishing basics", updated: "2026-07-13",
-    answer: "Get the fishing rod from Noel by a forest river around Night 2 (after completing 'Meet the Townsfolk'). Catch three fish and bring them to The Broken Lamp to prove yourself. Upgrade to the Premium Rod for large fish, and target Hammerhead Shark and Carp for the best gold per minute.",
+    answer: "Guides report getting the rod from Noel around Night 2 after 'Meet the Townsfolk.' They currently rank Hammerhead Shark and Carp highly for gold per minute, but locations, values, timing, and upgrade requirements may vary by version or patch.",
     sections: [
       { heading: "How to get the fishing rod", bullets: ["Complete Orlock's 'Meet the Townsfolk' quest first — this gates the fishing introduction.", "Around Night 2, find Noel by a river in the forest outside town. A cutscene will trigger.", "After speaking with Noel, a sparkling exclamation point appears in the forest above town.", "Catch three fish from nearby water and bring them to Noel at The Broken Lamp inn.", "Noel concedes you are a capable fisher, and you get to keep the rod."] },
       { heading: "How fishing works", bullets: ["Stand at a valid water edge (river, lake, or Luna Bay) and equip the rod.", "Cast only when the interaction indicator is active.", "Watch the bite and reel timing prompts — do not mash immediately.", "If a fish you don't want approaches the bait (e.g., a large fish when you have the basic rod), reel in slightly to divert it — no need to re-cast.", "Use short fishing sessions between travel objectives to keep the night productive."] },
@@ -416,24 +384,24 @@ multiplayer: {
             ["Hammerhead Shark", "Luna Bay", "TBD", "Rare", "Large", "Premium or Enchanted"],
             ["Carp", "Rivers and lakes", "TBD", "Common", "Small", "Any rod"]
           ] },
-        note: "Fish species, locations, and requirements sourced from Neoseeker, TheGamer, and Bonus Action guides. Additional species exist but are not listed here until verified independently. The best gold-per-minute fish are Hammerhead Shark and Carp. Big catch variants sell for roughly 10x the regular price." },
-      { heading: "Fishing tips", bullets: ["Reel in slightly to scare away unwanted fish — no need to recast entirely.", "Brew the Rapid Reel Potion (Mandrake + Wolfsbane) to fish faster.", "Noel bets 250 Gold you can't catch 3 fish on your first attempt — take the challenge.", "A Whisper has a base sell value of 40 Gold (base) or 50 Gold (1-star). Higher-quality fish sell for more.", "Fish energy values matter too — some species give more stamina when eaten than others."] }
+        note: "Fish species, locations, and requirements are guide-reported from Neoseeker, TheGamer, and Bonus Action. Current guides rank Hammerhead Shark and Carp highly and estimate big-catch variants near 10x regular value; these claims are currently being verified and may vary by patch." },
+      { heading: "Fishing tips", bullets: ["Reel in slightly to scare away unwanted fish — no need to recast entirely.", "Brew the Rapid Reel Potion (Mandrake + Wolfsbane) to fish faster.", "Community guides report a 250 Gold bet from Noel for catching 3 fish on your first attempt; quest terms may vary by version or patch.", "Guide tables list Whisper at 40 Gold base or 50 Gold at 1-star; these exact values are currently being verified and may vary by patch.", "Fish energy values matter too — some species give more stamina when eaten than others."] }
     ],
-    faqs: [ { question: "Who gives you the fishing rod?", answer: "Noel, by a forest river around Night 2. Complete 'Meet the Townsfolk' first." }, { question: "What is the best fish for gold?", answer: "Hammerhead Shark and Carp top the gold-per-minute charts. Big catch variants sell for roughly 10x the regular price." }, { question: "How do I upgrade my fishing rod?", answer: "Upgrade at the Howling Hammer. The Premium Rod requires Gold Ingots." }, { question: "Can I catch large fish with the basic rod?", answer: "No. Large fish require the Premium or Enchanted Fishing Rod." } ],
+    faqs: [ { question: "Who gives you the fishing rod?", answer: "Noel, by a forest river around Night 2. Complete 'Meet the Townsfolk' first." }, { question: "What is the best fish for gold?", answer: "Current community charts rank Hammerhead Shark and Carp highly and estimate big-catch variants near 10x regular value. These exact values are currently being verified and may vary by patch." }, { question: "How do I upgrade my fishing rod?", answer: "Upgrade at the Howling Hammer. The Premium Rod requires Gold Ingots." }, { question: "Can I catch large fish with the basic rod?", answer: "No. Large fish require the Premium or Enchanted Fishing Rod." } ],
     related: ["beginner-guide", "farming-guide", "money-guide"], sources: [NS_FISHING, TG_FISHING, BA_FISHING]
   },
 
 "steam-deck": {
     slug: "steam-deck", title: "Moonlight Peaks Steam Deck — Performance, Settings & Known Issues",
-    description: "How Moonlight Peaks runs on Steam Deck: Verified status, performance, recommended settings (50 Hz), battery life, and known issues including long loading and small text.",
+    description: "How Moonlight Peaks runs on Steam Deck: latest-check compatibility status, guide-reported settings, battery observations, loading, and text-size issues.",
     h1: "Moonlight Peaks on Steam Deck", eyebrow: "Handheld performance", updated: "2026-07-13",
-    answer: "Moonlight Peaks is Steam Deck Verified and playable, but independent testing from Steam Deck HQ reports long loading screens, small UI text, inconsistent performance, and occasional crashes. Recommended starting point: default graphics, 50 Hz refresh rate, and uncapped TDP.",
+    answer: "As of the latest check, Steam and independent coverage report Moonlight Peaks as Steam Deck Verified. That status may change by version or patch, while Steam Deck HQ testing reports long loading, small UI text, inconsistent performance, and occasional crashes.",
     sections: [
       { heading: "Compatibility snapshot",
         table: { headers: ["Item", "Status", "Notes"],
           rows: [
-            ["Steam Deck status", "Verified", "Official Steam Deck compatibility"],
-            ["ProtonDB rating", "Gold", "Community-tested compatibility"],
+              ["Steam Deck status", "Guide-reported as Verified as of the latest check", "May change after a game or compatibility update"],
+              ["ProtonDB rating", "Community-reported as Gold at the latest check", "Community rating; may change as reports are added"],
             ["Controller support", "Works out of the box", "Full gamepad support"],
             ["Loading screens", "Frequent and sometimes long", "Guide-tested — a common complaint"],
             ["UI text", "Small text; limited scaling options", "Guide-tested — readability concern"],
@@ -442,9 +410,9 @@ multiplayer: {
           ] } },
       { heading: "Recommended settings", bullets: ["Start with default graphics settings.", "Steam Deck HQ recommends trying a 50 Hz refresh rate as a balance between smoothness and stability.", "Leave TDP uncapped initially — aggressive power limits can cause input lag.", "Test readability during the demo or within the Steam refund window if small text is a concern.", "Install the latest game updates and SteamOS updates before troubleshooting.", "Adjust in-game settings and SteamOS Quick Access Menu (QAM) settings together for best results."], note: "Settings recommendations from independent guide testing, not official developer targets." },
       { heading: "Known issues", bullets: ["Long or frequent loading screens between areas.", "Small dialogue and interface text — limited UI scaling options.", "Occasional stutter or inability to maintain a consistent frame rate.", "Independent review from Steam Deck HQ reported crashes and a stuck-character incident.", "Limited in-game performance options compared to desktop PC."] },
-      { heading: "Battery life", paragraphs: ["An independent OLED model test reported roughly 4-5 hours of battery life. Actual battery duration varies with screen brightness, TDP settings, background processes, and battery health. The LCD model may differ."] }
+      { heading: "Battery life", paragraphs: ["One independent, guide-reported OLED test observed roughly 4-5 hours. This is not a universal target and may vary with model, screen brightness, TDP settings, background processes, battery health, game version, and patch."] }
     ],
-    faqs: [ { question: "Is Moonlight Peaks Steam Deck Verified?", answer: "Yes. It is currently listed as Verified on Steam. Store status can change after game updates." }, { question: "What frame rate should I target?", answer: "Steam Deck HQ recommends trying 50 Hz. Exact performance varies by scene." }, { question: "How is battery life?", answer: "Independent OLED testing reports roughly 4-5 hours. Results vary with settings and model." }, { question: "Does the text size affect gameplay?", answer: "Independent reviewers note small text with limited scaling options — it may be a concern on the smaller screen." } ],
+    faqs: [ { question: "Is Moonlight Peaks Steam Deck Verified?", answer: "As of the latest check, Steam and independent coverage list it as Verified. Store status may change after game or compatibility updates." }, { question: "What frame rate should I target?", answer: "Steam Deck HQ recommends trying 50 Hz. Exact performance varies by scene." }, { question: "How is battery life?", answer: "One independent, guide-reported OLED test observed roughly 4-5 hours. Results may vary with model, settings, battery health, game version, and patch." }, { question: "Does the text size affect gameplay?", answer: "Independent reviewers note small text with limited scaling options — it may be a concern on the smaller screen." } ],
     related: ["switch", "ps5", "is-moonlight-peaks-worth-it"], sources: [STEAM, SDHQ]
   },
 

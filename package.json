@@ -14,8 +14,7 @@
     "check:links": "node scripts/check-internal-links.mjs",
     "check:routes": "node scripts/check-static-routes.mjs",
     "check:ui": "node scripts/check-public-ui.mjs",
-    "serve:out": "node scripts/serve-out.mjs",
-    "test:e2e": "node scripts/run-e2e.mjs"
+    "serve:out": "node scripts/serve-out.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.21.0",

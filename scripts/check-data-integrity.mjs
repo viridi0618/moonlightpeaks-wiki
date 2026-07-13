@@ -1,192 +1,66 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const expectedSlugs = [
+  "switch", "ps5", "multiplayer", "beginner-guide", "romance-guide",
+  "samael-romance", "treasure-hunt-clues", "fallen-tree",
+  "is-moonlight-peaks-worth-it", "money-guide", "gift-guide",
+  "spells-guide", "farming-guide", "fishing-guide", "steam-deck",
+  "games-like-moonlight-peaks",
+];
+const guideSource = fs.readFileSync(path.resolve("src/data/guides.ts"), "utf8");
+const dataSource = fs.readFileSync(path.resolve("src/lib/data.ts"), "utf8");
+const slugs = [...guideSource.matchAll(/^\s{4}slug: "([^"]+)"/gm)].map((match) => match[1]);
 
-function read(file) {
-  return fs.readFileSync(path.resolve(file), "utf8");
+if (slugs.length !== expectedSlugs.length) {
+  throw new Error(`Guide count expected ${expectedSlugs.length}, found ${slugs.length}`);
+}
+if (new Set(slugs).size !== slugs.length) throw new Error("Duplicate guide slug found.");
+for (const slug of expectedSlugs) {
+  if (!slugs.includes(slug)) throw new Error(`Missing guide data for ${slug}.`);
+  if (!fs.existsSync(path.resolve(`src/app/${slug}/page.tsx`))) throw new Error(`Missing route file for ${slug}.`);
 }
 
-function extractArray(source, exportName) {
-  const start = source.indexOf(`export const ${exportName}`);
-  if (start === -1) throw new Error(`Missing export ${exportName}`);
-  const assignment = source.indexOf("=", start);
-  const open = source.indexOf("[", assignment);
-  let depth = 0;
-  for (let index = open; index < source.length; index += 1) {
-    const char = source[index];
-    if (char === "[") depth += 1;
-    if (char === "]") depth -= 1;
-    if (depth === 0) return source.slice(open, index + 1);
-  }
-  throw new Error(`Could not parse array ${exportName}`);
-}
-
-function extractObjects(arraySource) {
-  const objects = [];
-  let depth = 0;
-  let start = -1;
-  for (let index = 0; index < arraySource.length; index += 1) {
-    const char = arraySource[index];
-    if (char === "{") {
-      if (depth === 0) start = index;
-      depth += 1;
-    }
-    if (char === "}") {
-      depth -= 1;
-      if (depth === 0 && start !== -1) {
-        objects.push(arraySource.slice(start, index + 1));
-        start = -1;
-      }
-    }
-  }
-  return objects;
-}
-
-function field(objectSource, name) {
-  const patterns = [
-    new RegExp(`${name}:\\s*"([^"]*)"`),
-    new RegExp(`${name}:\\s*\`([\\s\\S]*?)\``),
-    new RegExp(`${name}:\\s*(null|true|false|[-0-9.]+)`),
-  ];
-  for (const pattern of patterns) {
-    const match = objectSource.match(pattern);
-    if (match) return match[1];
-  }
-  return undefined;
-}
-
-function numberField(objectSource, name) {
-  const value = field(objectSource, name);
-  if (value === undefined || value === "null") return null;
-  return Number(value);
-}
-
-function requireCount(label, records, expected) {
-  if (records.length !== expected) {
-    throw new Error(`${label} count expected ${expected}, found ${records.length}`);
+for (const requiredExport of ["siteConfig", "publicRoutes", "navItems"]) {
+  if (!new RegExp(`export (?:\\{[^}]*\\b${requiredExport}\\b|const ${requiredExport}\\b)`, "s").test(dataSource)) {
+    throw new Error(`src/lib/data.ts missing required export ${requiredExport}.`);
   }
 }
-
-function requireUniqueSafeSlugs(label, records) {
-  const seen = new Set();
-  for (const record of records) {
-    if (!record.slug || !slugPattern.test(record.slug)) {
-      throw new Error(`${label} has unsafe slug: ${record.slug}`);
-    }
-    if (seen.has(record.slug)) {
-      throw new Error(`${label} has duplicate slug: ${record.slug}`);
-    }
-    seen.add(record.slug);
-  }
+for (const forbiddenExport of ["brainrots", "mutations", "traits", "publishedBrainrots", "publishedTraits", "eventVerification"]) {
+  if (new RegExp(`\\b${forbiddenExport}\\b`).test(dataSource)) throw new Error(`Legacy export remains in src/lib/data.ts: ${forbiddenExport}`);
 }
 
-function parseRecords(file, exportName) {
-  const objects = extractObjects(extractArray(read(file), exportName));
-  return objects.map((objectSource) => ({
-    source: objectSource,
-    slug: field(objectSource, "slug"),
-    name: field(objectSource, "name"),
-    rarity: field(objectSource, "rarity"),
-    baseCostDisplay: field(objectSource, "baseCostDisplay"),
-    baseIncomeDisplay: field(objectSource, "baseIncomeDisplay"),
-    multiplierDisplay: field(objectSource, "multiplierDisplay"),
-    spawnRateDisplay: field(objectSource, "spawnRateDisplay"),
-    multiplierValue: numberField(objectSource, "multiplierValue"),
-    spawnRateValue: numberField(objectSource, "spawnRateValue"),
-    availability: field(objectSource, "availability"),
-    acquisitionMethod: field(objectSource, "acquisitionMethod"),
-    verifiedAt: field(objectSource, "verifiedAt"),
-    overview: field(objectSource, "overview"),
-    description: field(objectSource, "description"),
-  }));
+const legacyPaths = [
+  "src/data/brainrots.ts", "src/data/mutations.ts", "src/data/traits.ts",
+  "src/data/sources.ts", "src/lib/published-data.ts",
+  "src/components/BrainrotDetailTemplate.tsx", "src/components/TraitDetailTemplate.tsx",
+  "src/components/explorers",
+];
+for (const legacyPath of legacyPaths) {
+  if (fs.existsSync(path.resolve(legacyPath))) throw new Error(`Legacy SAB path still exists: ${legacyPath}`);
 }
 
-function parseDisplayNumber(display) {
-  if (!display || display === "null") return null;
-  const match = display.match(/~?([0-9]+(?:\.[0-9]+)?)/);
-  if (!match) return null;
-  return Number(match[1]);
+if (!guideSource.includes("As of the latest check")) throw new Error("Steam Deck status lacks latest-check wording.");
+if (!guideSource.includes("guide-reported OLED test")) throw new Error("Battery-life claim lacks guide-reported wording.");
+if (!guideSource.includes("Community-reported as Gold at the latest check")) throw new Error("ProtonDB status lacks community/latest-check wording.");
+if (!guideSource.includes("Aquaflux II coverage of up to 48 crops") || !guideSource.includes("currently being verified and may vary by version or patch")) {
+  throw new Error("Aquaflux II coverage lacks source-confidence wording.");
+}
+if (!guideSource.includes("around Night 18") || !guideSource.includes("timing may vary by version, patch, pace, or quest order")) {
+  throw new Error("Night 18 unlock timing lacks version-sensitive wording.");
+}
+if (!guideSource.includes("A public tracking snapshot reported a peak") || !guideSource.includes("This is time-sensitive, not a permanent player count") || !guideSource.includes("Exact profitability may vary by version or patch")) {
+  throw new Error("Player-count or profitability claims lack source-confidence wording.");
+}
+if (!guideSource.includes("these exact values are currently being verified and may vary by patch")) {
+  throw new Error("Exact fish-value claims lack verification wording.");
 }
 
-const brainrots = parseRecords("src/data/brainrots.ts", "brainrots");
-const traits = parseRecords("src/data/traits.ts", "traits");
-const mutations = parseRecords("src/data/mutations.ts", "mutations");
-
-requireCount("Brainrot", brainrots, 69);
-requireCount("Trait", traits, 24);
-requireCount("Mutation", mutations, 14);
-requireUniqueSafeSlugs("Brainrot", brainrots);
-requireUniqueSafeSlugs("Trait", traits);
-requireUniqueSafeSlugs("Mutation", mutations);
-
-for (const record of brainrots) {
-  for (const required of ["name", "rarity", "baseCostDisplay", "baseIncomeDisplay", "availability", "acquisitionMethod", "verifiedAt", "overview", "description"]) {
-    if (!record[required] || record[required] === "null") {
-      throw new Error(`Brainrot ${record.slug} missing ${required}`);
-    }
-  }
-  const otherName = brainrots.find((other) => (
-    other.slug !== record.slug &&
-    other.name &&
-    record.overview?.includes(other.name) &&
-    !record.name?.includes(other.name)
-  ));
-  if (otherName) {
-    throw new Error(`Brainrot ${record.slug} overview contains another Brainrot name: ${otherName.name}`);
-  }
-  if (/\bCash\b/.test(record.overview ?? "") && !record.overview?.includes(record.baseCostDisplay ?? "")) {
-    throw new Error(`Brainrot ${record.slug} overview mentions cost but not its own baseCostDisplay.`);
-  }
-  if (/Cash\/s/.test(record.overview ?? "") && !record.overview?.includes(record.baseIncomeDisplay ?? "")) {
-    throw new Error(`Brainrot ${record.slug} overview mentions income but not its own baseIncomeDisplay.`);
-  }
-  const duplicateOverview = brainrots.find((other) => (
-    other.slug !== record.slug &&
-    other.overview === record.overview
-  ));
-  if (duplicateOverview) {
-    throw new Error(`Brainrot ${record.slug} duplicates overview from ${duplicateOverview.slug}.`);
-  }
-  const duplicateDescription = brainrots.find((other) => (
-    other.slug !== record.slug &&
-    other.description === record.description &&
-    !record.description?.includes(record.name ?? "")
-  ));
-  if (duplicateDescription) {
-    throw new Error(`Brainrot ${record.slug} duplicates description from ${duplicateDescription.slug}.`);
-  }
-  if (!record.source.includes("tips: [")) {
-    throw new Error(`Brainrot ${record.slug} missing tips array.`);
-  }
-  if (!record.source.includes("sources: [")) {
-    throw new Error(`Brainrot ${record.slug} missing sources.`);
-  }
+const worthItBlock = guideSource.match(/"is-moonlight-peaks-worth-it": \{[\s\S]*?\n\s*description: "([^"]+)"/);
+if (!worthItBlock) throw new Error("Worth-it metadata description not found.");
+if (worthItBlock[1].includes("$34.99")) throw new Error("Worth-it metadata must not hardcode $34.99.");
+if (!guideSource.includes("Prices may vary by region, edition, and sale period.")) {
+  throw new Error("Worth-it page is missing the required price variability note.");
 }
 
-for (const record of traits) {
-  for (const required of ["name", "multiplierDisplay", "availability", "acquisitionMethod", "verifiedAt", "description"]) {
-    if (!record[required] || record[required] === "null") {
-      throw new Error(`Trait ${record.slug} missing ${required}`);
-    }
-  }
-  if (!record.source.includes("effect:")) {
-    throw new Error(`Trait ${record.slug} missing effect.`);
-  }
-}
-
-for (const record of mutations) {
-  for (const required of ["name", "multiplierDisplay", "availability", "acquisitionMethod", "verifiedAt", "description"]) {
-    if (!record[required] || record[required] === "null") {
-      throw new Error(`Mutation ${record.slug} missing ${required}`);
-    }
-  }
-  if (record.spawnRateValue !== null) {
-    const displayNumber = parseDisplayNumber(record.spawnRateDisplay);
-    if (displayNumber === null || Math.abs(displayNumber - record.spawnRateValue) > 0.001) {
-      throw new Error(`Mutation ${record.slug} spawn rate display/value mismatch.`);
-    }
-  }
-}
-
-console.log(`Data integrity verified: ${brainrots.length} brainrots, ${traits.length} traits, ${mutations.length} mutations.`);
+console.log(`Verified ${slugs.length} Moonlight Peaks guide records, route files, required exports, legacy cleanup, and cautious high-risk wording.`);

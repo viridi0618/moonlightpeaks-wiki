@@ -52,7 +52,7 @@ for (const file of htmlFiles) {
 
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
   const title = html.match(/<title>([^<]+)<\/title>/);
-  if (title && /Steal a Brainrot Guide.*Steal a Brainrot Guide/.test(title[1])) {
+  if (title && /Moonlight Peaks Guide.*Moonlight Peaks Guide/.test(title[1])) {
     failures.push(`${rel}: duplicate site name in title`);
   }
 

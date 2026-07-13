@@ -29,13 +29,13 @@ npm run check:responsive
 
 ## Site URL
 
-Set the production domain through:
+Before production launch, set:
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://YOUR_DOMAIN_HERE
+NEXT_PUBLIC_SITE_URL=https://actual-domain.com
 ```
 
-Canonical URLs, Open Graph URLs, sitemap URLs, robots references, and JSON-LD URLs all use this value. Do not use a competitor domain.
+Canonical URLs, Open Graph URLs, sitemap URLs, robots references, and JSON-LD URLs all use this value. `npm run check:seo` intentionally fails if exported HTML, sitemap, or robots output still contains `YOUR_DOMAIN_HERE`.
 
 Optional public variables:
 

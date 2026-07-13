@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.siteName} - Brainrots, Traits, Collection & Events`,
+    title: "Moonlight Peaks Guide – Romance, Gifts, Money, Spells & Beginner Tips",
     description: siteConfig.description,
     images: [siteConfig.defaultSocialImage],
   },

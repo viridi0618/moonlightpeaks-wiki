@@ -33,12 +33,15 @@ for (const route of routes) {
   const title = capture(html, /<title>([^<]+)<\/title>/);
   const description = capture(html, /<meta name="description" content="([^"]+)"/);
   const canonical = capture(html, /<link rel="canonical" href="([^"]+)"/);
+  const head = html.split("</head>")[0] ?? html;
   for (const [label, value, map] of [["title", title, titles], ["description", description, descriptions], ["canonical", canonical, canonicals]]) {
     if (!value) failures.push(`${route}: missing ${label}`);
     else if (map.has(value)) failures.push(`${route}: duplicate ${label} also used by ${map.get(value)}`);
     else map.set(value, route);
   }
   if (/moonlightpeaks\.wiki/i.test(html)) failures.push(`${route}: competitor domain found`);
+  if (html.includes("YOUR_DOMAIN_HERE")) failures.push(`${route}: production site URL is not configured`);
+  if (/Brainrots|Traits|Roblox|\bSAB\b|Steal a Brainrot/i.test(head)) failures.push(`${route}: legacy SAB wording found in metadata`);
   if (/[\u3400-\u4dbf\u4e00-\u9fff]/u.test(html.replace(/<script[^>]*src=[^>]*>[\s\S]*?<\/script>/g, ""))) failures.push(`${route}: Chinese text found in rendered HTML`);
   if (!html.includes('property="og:locale" content="en_US"')) failures.push(`${route}: missing og:locale en_US`);
   const internalLinks = [...html.matchAll(/<a[^>]+href="\/(?!_next)[^"]*"/g)].length;
@@ -60,9 +63,11 @@ for (const route of routes) {
 const sitemap = fs.readFileSync(path.join(out, "sitemap.xml"), "utf8");
 if ([...sitemap.matchAll(/<loc>/g)].length !== 17) failures.push("sitemap.xml: expected 17 URLs");
 if (/moonlightpeaks\.wiki/i.test(sitemap)) failures.push("sitemap.xml: competitor domain found");
+if (sitemap.includes("YOUR_DOMAIN_HERE")) failures.push("sitemap.xml: production site URL is not configured");
 const robots = fs.readFileSync(path.join(out, "robots.txt"), "utf8");
 if (!robots.includes("Allow: /")) failures.push("robots.txt: missing Allow: /");
 if (!robots.includes("Sitemap:")) failures.push("robots.txt: missing sitemap URL");
+if (robots.includes("YOUR_DOMAIN_HERE")) failures.push("robots.txt: production site URL is not configured");
 
 if (failures.length) {
   console.error("Moonlight SEO checks failed:");
