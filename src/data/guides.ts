@@ -82,8 +82,8 @@ switch: {
     sections: [
       { heading: "Switch versions at a glance",
         table: { headers: ["Feature", "Nintendo Switch", "Nintendo Switch 2"],
-          rows: [ ["Release date", "July 7, 2026", "July 7, 2026"], ["File size", "2.5 GB", "4.5 GB"], ["Players", "1 (single system)", "1 (single system)"], ["Resolution", "TBD", "Higher than Switch 1"], ["Frame rate", "TBD", "Improved over Switch 1"] ] },
-        note: "File sizes, resolution, and frame rate data from Nintendo.com and Nintendo eShop listings." },
+          rows: [ ["Release date", "July 7, 2026", "July 7, 2026"], ["File size", "2.5 GB", "4.5 GB"], ["Players", "1 (single system)", "1 (single system)"], ["Resolution", "Not specified", "Higher than Switch 1 (exact numbers not published)"], ["Frame rate", "Not specified", "Improved — players report smooth, no drops"] ] },
+        note: "Nintendo describes Switch 2 performance as 'higher resolution with improved frame rates' (eShop listing). No exact resolution or FPS targets published. Community reports (Reddit) confirm smooth performance with no frame drops on Switch 2." },
       { heading: "Switch 2 Edition upgrade", paragraphs: ["Switch 1 owners can purchase a Switch 2 Edition Upgrade Pack. Community reports suggest the upgrade costs around $5.00, though the exact price may vary by region and sale period. Nintendo does not publish a fixed upgrade price — check the eShop for your region's current listing."] },
       { heading: "Price notes", paragraphs: ["Prices across storefronts vary by region, edition, and sale period. Community-reported approximate prices: Switch 1 around $34.99, Switch 2 around $39.99. Always confirm the current eShop price before purchasing."], note: "All prices are approximate and subject to change. This guide does not list a fixed price because storefront and region differences can shift the number." },
       { heading: "Demo availability", paragraphs: ["A free demo is available on Nintendo Switch through the eShop. The demo lets you sample the opening hours before purchasing either edition."] },
