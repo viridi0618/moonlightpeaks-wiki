@@ -46,9 +46,16 @@ for (const route of routes) {
   if (!html.includes('property="og:locale" content="en_US"')) failures.push(`${route}: missing og:locale en_US`);
   const internalLinks = [...html.matchAll(/<a[^>]+href="\/(?!_next)[^"]*"/g)].length;
   if (internalLinks < 3) failures.push(`${route}: fewer than three internal links`);
+  const ownDomains = ["stealabrainrotguide.wiki", "gutsandblackpowder.wiki", "moonlightpeaksguide.wiki"];
   const externalAnchors = [...html.matchAll(/<a[^>]+href="https?:\/\/[^>]+>/g)].map((match) => match[0]);
   for (const anchor of externalAnchors) {
-    if (!/rel="[^"]*noopener[^"]*noreferrer[^"]*nofollow[^"]*"/.test(anchor)) failures.push(`${route}: external link missing required rel`);
+    const isOwn = ownDomains.some((domain) => anchor.includes(domain));
+    if (isOwn) {
+      if (!/rel="[^"]*noopener[^"]*noreferrer[^"]*"/.test(anchor)) failures.push(`${route}: own-domain link missing rel="noopener noreferrer"`);
+      if (/nofollow/.test(anchor)) failures.push(`${route}: own-domain link should not use nofollow`);
+    } else {
+      if (!/rel="[^"]*noopener[^"]*noreferrer[^"]*nofollow[^"]*"/.test(anchor)) failures.push(`${route}: external link missing required rel`);
+    }
   }
   if (route === "/") {
     if (!html.includes('"@type":"WebSite"')) failures.push("/: missing WebSite schema");

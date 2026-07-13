@@ -25,8 +25,8 @@ export default function Footer() {
         </div>
         <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs text-[#91889f]">
           <span className="text-[#82798f]">More game guides:</span>
-          <a href="https://stealabrainrotguide.wiki" target="_blank" rel="noopener" className="hover:text-[#e2c27a] transition">Steal a Brainrot Wiki</a>
-          <a href="https://gutsandblackpowder.wiki" target="_blank" rel="noopener" className="hover:text-[#e2c27a] transition">Guts &amp; Blackpowder Wiki</a>
+          <a href="https://stealabrainrotguide.wiki" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2c27a] transition">Steal a Brainrot Wiki</a>
+          <a href="https://gutsandblackpowder.wiki" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2c27a] transition">Guts &amp; Blackpowder Wiki</a>
         </div>
         <div className="mt-10 flex flex-col gap-3 border-t border-[#2f2342] pt-6 text-xs text-[#82798f] sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} {siteConfig.shortName}. Unofficial fan resource.</span>
