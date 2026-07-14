@@ -22,6 +22,7 @@ for (const slug of expectedSlugs) {
 }
 
 const missingImageSourceUrls = [];
+const imageToSlugs = new Map();
 for (const slug of expectedSlugs) {
   const guideLine = guideSource.match(new RegExp(`slug: "${slug}",([^\\n]+)`))?.[1] ?? "";
   const image = guideLine.match(/\bimage: "([^"]+)"/)?.[1];
@@ -36,10 +37,16 @@ for (const slug of expectedSlugs) {
   if (/YOUR_DOMAIN_HERE/i.test(image)) throw new Error(`Guide ${slug} image contains YOUR_DOMAIN_HERE.`);
   if (/(?:placeholder|placehold\.co|dummy|fake|example\.com)/i.test(image)) throw new Error(`Guide ${slug} image appears to be a fake placeholder.`);
   if (!imageSourceUrl) missingImageSourceUrls.push(slug);
+  imageToSlugs.set(image, [...(imageToSlugs.get(image) ?? []), slug]);
 }
 
 if (missingImageSourceUrls.length) {
   console.warn(`Guides missing optional imageSourceUrl: ${missingImageSourceUrls.join(", ")}`);
+}
+
+const duplicateImages = [...imageToSlugs.entries()].filter(([, duplicateSlugs]) => duplicateSlugs.length > 1);
+if (duplicateImages.length) {
+  throw new Error(`Duplicate guide image URLs found: ${duplicateImages.map(([image, duplicateSlugs]) => `${image} (${duplicateSlugs.join(", ")})`).join("; ")}`);
 }
 
 for (const requiredExport of ["siteConfig", "publicRoutes", "navItems"]) {

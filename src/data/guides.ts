@@ -79,7 +79,7 @@ const NE_EVERYTHING: GuideSource = { label: "Nintendo Everything — Romanceable
 
 export const guides: Record<string, Guide> = {
 switch: {
-    slug: "switch", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks on Switch? Switch & Switch 2 Guide",
+    slug: "switch", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MP_WebsiteScreen08-1024x576.png", imageAlt: "Moonlight Peaks gameplay screenshot with a cozy gothic town and supernatural life-sim atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks on Switch? Switch & Switch 2 Guide",
     description: "Moonlight Peaks is available on Nintendo Switch and Switch 2. Compare versions, upgrade pack details, demo availability, file size, performance notes, and where to buy.",
     h1: "Is Moonlight Peaks on Nintendo Switch?", eyebrow: "Platform guide", updated: "2026-07-13",
     answer: "Yes. Moonlight Peaks released July 7, 2026 on both Nintendo Switch and Switch 2, with a Switch 2 Edition featuring higher resolution and improved frame rates. A digital upgrade path is available for Switch owners.",
@@ -98,7 +98,7 @@ switch: {
   },
 
 ps5: {
-    slug: "ps5", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks on PS5? — PlayStation & Xbox Status",
+    slug: "ps5", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_337-1024x576.png", imageAlt: "Moonlight Peaks gameplay screenshot used for platform availability and general game status pages", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks on PS5? — PlayStation & Xbox Status",
     description: "Moonlight Peaks is not on PS5 or Xbox. Available on PC (Steam), macOS, Nintendo Switch, Switch 2, and Android. No PlayStation or Xbox release has been announced.",
     h1: "Is Moonlight Peaks on PS5?", eyebrow: "Platform status", updated: "2026-07-13",
     answer: "No. As of July 2026, Moonlight Peaks is not available on PS5, PS4, Xbox Series X|S, or Xbox One. No PlayStation or Xbox version has been announced by the developer or publisher.",
@@ -114,7 +114,7 @@ ps5: {
   },
 
 multiplayer: {
-    slug: "multiplayer", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MPWEBSITEFAMILIES.png", imageAlt: "Moonlight Peaks character families and relationship-focused artwork", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks Multiplayer? Co-op & Online Play",
+    slug: "multiplayer", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MP_WebsiteScreen10-1024x576.png", imageAlt: "Moonlight Peaks town and character scene for game mode and single-player status information", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks Multiplayer? Co-op & Online Play",
     description: "Moonlight Peaks is a single-player game with no multiplayer or co-op mode. Available on Steam, Nintendo Switch, Switch 2, and Android.",
     h1: "Is Moonlight Peaks Multiplayer?", eyebrow: "Game mode", updated: "2026-07-13",
     answer: "No. Moonlight Peaks is a single-player game. Steam lists it as Single-player, and Nintendo describes it as one player on a single system. There is no local co-op, online co-op, or competitive multiplayer mode.",
@@ -178,7 +178,7 @@ multiplayer: {
   },
 
 "samael-romance": {
-    slug: "samael-romance", image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2209900/extras/c31d02cff7c7b47f0456ccd8c839ec85.webp?t=1783444081", imageAlt: "Moonlight Peaks relationship scene suited for romance, dating, and marriage guide content", imageCredit: "Steam store screenshot", imageSourceUrl: "https://store.steampowered.com/app/2209900/Moonlight_Peaks/", title: "How to Unlock Samael Romance in Moonlight Peaks",
+    slug: "samael-romance", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MP_WebsiteScreen09-1024x576.png", imageAlt: "Moonlight Peaks character interaction scene suited for Samael romance and relationship progression", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "How to Unlock Samael Romance in Moonlight Peaks",
     description: "Step-by-step guide to dating Samael Ambrosia: unlock conditions, quest requirements, where to find him, loved gifts (red wine), and common progression blockers.",
     h1: "How to Unlock Samael Romance in Moonlight Peaks", eyebrow: "Character guide", updated: "2026-07-13",
     answer: "Samael Ambrosia is your cousin (Orlock's nephew) and runs The Broken Lamp bar in Misty Shores. He is romanceable, likes red wine as a loved gift, and requires specific story progression and quest completion before dating unlocks.",
@@ -232,7 +232,7 @@ multiplayer: {
   },
 
 "is-moonlight-peaks-worth-it": {
-    slug: "is-moonlight-peaks-worth-it", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks Worth It? — Price, Platforms & What Players Say",
+    slug: "is-moonlight-peaks-worth-it", image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2209900/9a9b199531ec49be95ea2d34e67dfab47106584b/header.jpg?t=1783444081", imageAlt: "Moonlight Peaks official Steam header art with the player character, hellkitten, and gothic town backdrop", imageCredit: "Steam store screenshot", imageSourceUrl: "https://store.steampowered.com/app/2209900/Moonlight_Peaks/", title: "Is Moonlight Peaks Worth It? — Price, Platforms & What Players Say",
     description: "Should you buy Moonlight Peaks? Compare platforms, Steam sentiment, gameplay systems, demo availability, and honest reasons to buy now or wait.",
     h1: "Is Moonlight Peaks Worth It?", eyebrow: "Buying guide", updated: "2026-07-13",
     answer: "For players who want a full single-player farming sim with a strong gothic-vampire atmosphere, Moonlight Peaks is a reasonable purchase. Players sensitive to slow travel, loading screens, or early technical issues may prefer to wait for patches or try the free demo first.",
@@ -275,7 +275,7 @@ multiplayer: {
   },
 
 "gift-guide": {
-    slug: "gift-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MPWEBSITEFAMILIES.png", imageAlt: "Moonlight Peaks families and townsfolk artwork for NPC relationships and friendship systems", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Gift Guide — Best Gifts for Every Character",
+    slug: "gift-guide", image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2209900/extras/b849678c58a14068d09effeb384a5617.avif?t=1783444081", imageAlt: "Moonlight Peaks romanceable character portraits for gifts, friendship, and relationship tracking", imageCredit: "Steam store screenshot", imageSourceUrl: "https://store.steampowered.com/app/2209900/Moonlight_Peaks/", title: "Moonlight Peaks Gift Guide — Best Gifts for Every Character",
     description: "Moonlight Peaks gift guide: loved and disliked gifts for romanceable characters, gift-giving mechanics, and how to find the best gifts. Updated as community data grows.",
     h1: "Moonlight Peaks Gift Guide", eyebrow: "Relationship reference", updated: "2026-07-13",
     answer: "Here's the honest situation: Moonlight Peaks launched on 7 July 2026 and the community is still mapping gift preferences. Right now, only one loved gift is guide-confirmed — Samael likes red wine. Most of the table below is TBD, and that's fine. Publishing made-up gift data would waste your rare items and sabotage your relationships. What follows is how the system works and how to discover preferences yourself while the community figures it out.",
@@ -394,7 +394,7 @@ multiplayer: {
   },
 
 "steam-deck": {
-    slug: "steam-deck", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Steam Deck — Performance, Settings & Known Issues",
+    slug: "steam-deck", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_301-1024x576.png", imageAlt: "Moonlight Peaks gameplay screenshot suitable for handheld performance and Steam Deck guide context", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Steam Deck — Performance, Settings & Known Issues",
     description: "How Moonlight Peaks runs on Steam Deck: latest-check compatibility status, guide-reported settings, battery observations, loading, and text-size issues.",
     h1: "Moonlight Peaks on Steam Deck", eyebrow: "Handheld performance", updated: "2026-07-13",
     answer: "Steam lists Moonlight Peaks as Deck Verified. Independent testers are less enthusiastic — Steam Deck HQ reports long loading screens, small UI text, stutter, and crashes. The short version: it runs, but it's not a smooth Deck experience yet. Try the demo on your Deck before buying if handheld is your primary platform.",
@@ -419,7 +419,7 @@ multiplayer: {
   },
 
 "games-like-moonlight-peaks": {
-    slug: "games-like-moonlight-peaks", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonlightPeaks_Forest02_Winter_QHD-1024x569.png", imageAlt: "Moonlight Peaks winter forest exploration scene with a mysterious nighttime atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "10 Games Like Moonlight Peaks — Similar Cozy Farming Sims",
+    slug: "games-like-moonlight-peaks", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonlightPeaks_Screenshot01-1-1024x576.jpg", imageAlt: "Moonlight Peaks scenic gameplay screenshot for cozy farming sim comparison guides", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "10 Games Like Moonlight Peaks — Similar Cozy Farming Sims",
     description: "Love Moonlight Peaks? Here's what to play next — 10 farming sims with romance, magic, crafting, and town-building, matched by what you actually enjoy most.",
     h1: "Games Like Moonlight Peaks", eyebrow: "What to play next", updated: "2026-07-13",
     answer: "Finished Moonlight Peaks and want more? Wylde Flowers is the natural next step if you loved the witchy romance. Stardew Valley is endless if you're chasing farming depth. Sun Haven is the closest aesthetic match — supernatural farming with RPG combat. Pick based on what hooked you, not a generic Top 10 list.",
