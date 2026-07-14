@@ -6,10 +6,13 @@ import GuideCard from "@/components/GuideCard";
 import InfoTable from "@/components/InfoTable";
 import JsonLd from "@/components/JsonLd";
 import { getGuide, type Guide } from "@/data/guides";
-import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { absoluteUrl, resolveAssetUrl, siteConfig } from "@/lib/site-config";
 
 export default function GuidePage({ guide }: { guide: Guide }) {
   const pageUrl = absoluteUrl(`/${guide.slug}/`);
+  const heroImage = guide.image ?? siteConfig.defaultSocialImage;
+  const heroImageUrl = resolveAssetUrl(heroImage);
+  const articleImage = resolveAssetUrl(guide.image ?? siteConfig.defaultSocialImage);
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -26,7 +29,7 @@ export default function GuidePage({ guide }: { guide: Guide }) {
     datePublished: guide.updated,
     dateModified: guide.updated,
     mainEntityOfPage: pageUrl,
-    image: absoluteUrl(siteConfig.defaultSocialImage),
+    image: articleImage,
     author: { "@type": "Organization", name: siteConfig.siteName, url: absoluteUrl("/") },
     publisher: { "@type": "Organization", name: siteConfig.siteName, url: absoluteUrl("/") },
   };
@@ -40,7 +43,12 @@ export default function GuidePage({ guide }: { guide: Guide }) {
     <>
       <JsonLd data={[breadcrumb, article, faq]} />
       <section className="relative overflow-hidden border-b border-[#3b2a56] pt-24">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,5,18,.98)_0%,rgba(8,5,18,.82)_48%,rgba(8,5,18,.45)_100%),url('/moonlight-peaks-guide-hero.png')] bg-cover bg-center" />
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(8,5,18,.98) 0%, rgba(8,5,18,.82) 48%, rgba(8,5,18,.45) 100%), url("${heroImageUrl}")`,
+          }}
+        />
         <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <Breadcrumbs current={guide.h1} />
           <p className="mt-10 text-xs font-bold uppercase tracking-[0.25em] text-[#e2c27a]">{guide.eyebrow}</p>

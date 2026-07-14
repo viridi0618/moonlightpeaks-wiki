@@ -20,3 +20,8 @@ export function absoluteUrl(path = "/") {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   return `${siteConfig.url}${normalizedPath === "/" ? "" : normalizedPath}`;
 }
+
+export function resolveAssetUrl(src: string) {
+  if (/^https?:\/\//i.test(src)) return src;
+  return absoluteUrl(src);
+}

@@ -19,6 +19,10 @@ export type GuideSource = {
 
 export type Guide = {
   slug: string;
+  image?: string;
+  imageAlt?: string;
+  imageCredit?: string;
+  imageSourceUrl?: string;
   title: string;
   description: string;
   h1: string;
@@ -75,7 +79,7 @@ const NE_EVERYTHING: GuideSource = { label: "Nintendo Everything — Romanceable
 
 export const guides: Record<string, Guide> = {
 switch: {
-    slug: "switch", title: "Is Moonlight Peaks on Switch? Switch & Switch 2 Guide",
+    slug: "switch", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks on Switch? Switch & Switch 2 Guide",
     description: "Moonlight Peaks is available on Nintendo Switch and Switch 2. Compare versions, upgrade pack details, demo availability, file size, performance notes, and where to buy.",
     h1: "Is Moonlight Peaks on Nintendo Switch?", eyebrow: "Platform guide", updated: "2026-07-13",
     answer: "Yes. Moonlight Peaks released July 7, 2026 on both Nintendo Switch and Switch 2, with a Switch 2 Edition featuring higher resolution and improved frame rates. A digital upgrade path is available for Switch owners.",
@@ -94,7 +98,7 @@ switch: {
   },
 
 ps5: {
-    slug: "ps5", title: "Is Moonlight Peaks on PS5? — PlayStation & Xbox Status",
+    slug: "ps5", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks on PS5? — PlayStation & Xbox Status",
     description: "Moonlight Peaks is not on PS5 or Xbox. Available on PC (Steam), macOS, Nintendo Switch, Switch 2, and Android. No PlayStation or Xbox release has been announced.",
     h1: "Is Moonlight Peaks on PS5?", eyebrow: "Platform status", updated: "2026-07-13",
     answer: "No. As of July 2026, Moonlight Peaks is not available on PS5, PS4, Xbox Series X|S, or Xbox One. No PlayStation or Xbox version has been announced by the developer or publisher.",
@@ -110,7 +114,7 @@ ps5: {
   },
 
 multiplayer: {
-    slug: "multiplayer", title: "Is Moonlight Peaks Multiplayer? Co-op & Online Play",
+    slug: "multiplayer", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MPWEBSITEFAMILIES.png", imageAlt: "Moonlight Peaks character families and relationship-focused artwork", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks Multiplayer? Co-op & Online Play",
     description: "Moonlight Peaks is a single-player game with no multiplayer or co-op mode. Available on Steam, Nintendo Switch, Switch 2, and Android.",
     h1: "Is Moonlight Peaks Multiplayer?", eyebrow: "Game mode", updated: "2026-07-13",
     answer: "No. Moonlight Peaks is a single-player game. Steam lists it as Single-player, and Nintendo describes it as one player on a single system. There is no local co-op, online co-op, or competitive multiplayer mode.",
@@ -125,7 +129,7 @@ multiplayer: {
   },
 
 "beginner-guide": {
-    slug: "beginner-guide", title: "Moonlight Peaks Beginner Guide — First Week Tips & What to Do First",
+    slug: "beginner-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Beginner Guide — First Week Tips & What to Do First",
     description: "Just started Moonlight Peaks? First night walkthrough, which crops to plant early, how to unlock tools, and 20 essential tips early players swear by.",
     h1: "Moonlight Peaks Beginner Guide", eyebrow: "Getting started", updated: "2026-07-13",
     answer: "You wake up in a coffin. Your uncle's drunk. The mayor doesn't like you. But here's what matters: plant Blood Grapes, register at Town Hall, talk to everyone you see, and do not sell your Broken Wand or ore. Unlock Kegs early, save mana for spells rather than watering every crop, and you'll be in a good place by the end of your first week.",
@@ -146,7 +150,7 @@ multiplayer: {
   },
 
 "romance-guide": {
-    slug: "romance-guide", title: "Moonlight Peaks Romance Guide — Dating, Marriage & All 23 Options",
+    slug: "romance-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MPWEBSITEFAMILIES.png", imageAlt: "Moonlight Peaks character families and relationship-focused artwork", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Romance Guide — Dating, Marriage & All 23 Options",
     description: "Dating in Moonlight Peaks: all 23 romance options, how to raise affection, best gifts, heart events, and why marrying a werewolf when you're a vampire is half the fun.",
     h1: "Moonlight Peaks Romance Guide", eyebrow: "Relationships", updated: "2026-07-13",
     answer: "For a lot of players, the romance is the reason to move to Moonlight Peaks. It's a town full of supernatural singles — werewolves, witches, mermaids, and Death himself — and the dating system has been a headline feature since the game's reveal. You can pursue roughly two dozen characters at once, marry one, and even turn your mortal spouse into a vampire. No gender-locking, no fuss.",
@@ -174,7 +178,7 @@ multiplayer: {
   },
 
 "samael-romance": {
-    slug: "samael-romance", title: "How to Unlock Samael Romance in Moonlight Peaks",
+    slug: "samael-romance", image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2209900/extras/c31d02cff7c7b47f0456ccd8c839ec85.webp?t=1783444081", imageAlt: "Moonlight Peaks relationship scene suited for romance, dating, and marriage guide content", imageCredit: "Steam store screenshot", imageSourceUrl: "https://store.steampowered.com/app/2209900/Moonlight_Peaks/", title: "How to Unlock Samael Romance in Moonlight Peaks",
     description: "Step-by-step guide to dating Samael Ambrosia: unlock conditions, quest requirements, where to find him, loved gifts (red wine), and common progression blockers.",
     h1: "How to Unlock Samael Romance in Moonlight Peaks", eyebrow: "Character guide", updated: "2026-07-13",
     answer: "Samael Ambrosia is your cousin (Orlock's nephew) and runs The Broken Lamp bar in Misty Shores. He is romanceable, likes red wine as a loved gift, and requires specific story progression and quest completion before dating unlocks.",
@@ -191,7 +195,7 @@ multiplayer: {
   },
 
 "treasure-hunt-clues": {
-    slug: "treasure-hunt-clues", title: "Moonlight Peaks Elvira Treasure Hunt Clues Guide",
+    slug: "treasure-hunt-clues", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonlightPeaks_Screenshot10-1024x576.jpg", imageAlt: "Moonlight Peaks mysterious exploration scene for secrets, hidden quests, and rare discoveries", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Elvira Treasure Hunt Clues Guide",
     description: "Can't find Elvira's treasure? All five clue locations with exact spots, map areas, and what to look for at each location.",
     h1: "Elvira Treasure Hunt Clue Locations — Moonlight Peaks", eyebrow: "Quest solution", updated: "2026-07-13",
     answer: "Elvira's treasure hunt has five clues hidden across Misty Shores. They must be found in order. Locations: The Broken Lamp, Ambrosia graveyard, Webb of Wonders, Cave of Echoes, and Khazan Temple. The reward is a painting for your house.",
@@ -213,7 +217,7 @@ multiplayer: {
   },
 
 "fallen-tree": {
-    slug: "fallen-tree", title: "Where to Find the Fallen Tree in Moonlight Peaks — Location & Spell",
+    slug: "fallen-tree", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonlightPeaks_Forest02_Winter_QHD-1024x569.png", imageAlt: "Moonlight Peaks forest path scene for exploration, secrets, and hidden routes", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Where to Find the Fallen Tree in Moonlight Peaks — Location & Spell",
     description: "Find the fallen tree blocking the waterfall in Moonlight Peaks. Exact location (Moonlit Pines), required Aborascend spell from Sabrina, and common player mistakes.",
     h1: "Where to Find the Fallen Tree in Moonlight Peaks", eyebrow: "Quest solution", updated: "2026-07-13",
     answer: "The fallen tree is in Moonlit Pines, blocking the small waterfall west of the stairs leading to Luna's seed cart and cottage. Cast Aborascend to lift it. Buy Aborascend from Sabrina at Webb of Wonders.",
@@ -228,7 +232,7 @@ multiplayer: {
   },
 
 "is-moonlight-peaks-worth-it": {
-    slug: "is-moonlight-peaks-worth-it", title: "Is Moonlight Peaks Worth It? — Price, Platforms & What Players Say",
+    slug: "is-moonlight-peaks-worth-it", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Is Moonlight Peaks Worth It? — Price, Platforms & What Players Say",
     description: "Should you buy Moonlight Peaks? Compare platforms, Steam sentiment, gameplay systems, demo availability, and honest reasons to buy now or wait.",
     h1: "Is Moonlight Peaks Worth It?", eyebrow: "Buying guide", updated: "2026-07-13",
     answer: "For players who want a full single-player farming sim with a strong gothic-vampire atmosphere, Moonlight Peaks is a reasonable purchase. Players sensitive to slow travel, loading screens, or early technical issues may prefer to wait for patches or try the free demo first.",
@@ -248,7 +252,7 @@ multiplayer: {
   },
 
 "money-guide": {
-    slug: "money-guide", title: "How to Make Money Fast in Moonlight Peaks — Gold Farming Guide",
+    slug: "money-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/05/Website_MagicCrops-scaled.png", imageAlt: "Moonlight Peaks enchanted crop scene representing farming profit and gold-making routes", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "How to Make Money Fast in Moonlight Peaks — Gold Farming Guide",
     description: "Best ways to earn coins in Moonlight Peaks: Keg processing (the money printer), fishing gold-per-hour rankings, job board strategy, and the 5 things you should never sell.",
     h1: "How to Make Money in Moonlight Peaks", eyebrow: "Economy guide", updated: "2026-07-13",
     answer: "The short version: Kegs are your printing press for gold. Build at least three as soon as you can, keep them fed with pumpkins and nightshade, and run them constantly. Layer in job board requests, fishing during route gaps, and drying racks for foraged herbs. The longer version is below, with exactly what to do and what to never sell.",
@@ -271,7 +275,7 @@ multiplayer: {
   },
 
 "gift-guide": {
-    slug: "gift-guide", title: "Moonlight Peaks Gift Guide — Best Gifts for Every Character",
+    slug: "gift-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/02/MPWEBSITEFAMILIES.png", imageAlt: "Moonlight Peaks families and townsfolk artwork for NPC relationships and friendship systems", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Gift Guide — Best Gifts for Every Character",
     description: "Moonlight Peaks gift guide: loved and disliked gifts for romanceable characters, gift-giving mechanics, and how to find the best gifts. Updated as community data grows.",
     h1: "Moonlight Peaks Gift Guide", eyebrow: "Relationship reference", updated: "2026-07-13",
     answer: "Here's the honest situation: Moonlight Peaks launched on 7 July 2026 and the community is still mapping gift preferences. Right now, only one loved gift is guide-confirmed — Samael likes red wine. Most of the table below is TBD, and that's fine. Publishing made-up gift data would waste your rare items and sabotage your relationships. What follows is how the system works and how to discover preferences yourself while the community figures it out.",
@@ -298,7 +302,7 @@ multiplayer: {
   },
 
 "spells-guide": {
-    slug: "spells-guide", title: "Moonlight Peaks Spells Guide — Magic, Mana & How to Unlock Spells",
+    slug: "spells-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/04/WEBSITE_SPELLS-1-scaled.png", imageAlt: "Moonlight Peaks spellcasting scene showing magical powers and supernatural effects", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Spells Guide — Magic, Mana & How to Unlock Spells",
     description: "How to unlock magic in Moonlight Peaks: full spell list with effects, mana management, wand upgrades, shapeshifting forms, and why you should never sell the Broken Wand.",
     h1: "Moonlight Peaks Spells Guide", eyebrow: "Magic guide", updated: "2026-07-13",
     answer: "Magic unlocks when you repair the Broken Wand — guides consistently point to around Night 18 via Luna and Noel. That first spell (Aquaflux) changes everything: watering crops, clearing obstacles, and reaching new areas. This guide covers every spell, mana upgrades, and the shapeshifting forms that open up the mid-game.",
@@ -323,7 +327,7 @@ multiplayer: {
   },
 
 "farming-guide": {
-    slug: "farming-guide", title: "Moonlight Peaks Farming Guide — All Crops, Seasons & Profit Tips",
+    slug: "farming-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/04/WEBSITE_FARMING-1-scaled.png", imageAlt: "Moonlight Peaks farming scene with the player working around magical crops at night", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Farming Guide — All Crops, Seasons & Profit Tips",
     description: "Moonlight Peaks farming guide: cursed vs enchanted crops, the S-tier profit crops, Keg processing, seasonal planting, and why you should never water Aquaflux crops with a can.",
     h1: "Moonlight Peaks Farming Guide", eyebrow: "Farm systems", updated: "2026-07-13",
     answer: "Farming in Moonlight Peaks splits into two clear lanes: cursed crops (year-round, water with your can, reliable income) and enchanted crops (higher profit, but burn mana via Aquaflux to water them). Plant pumpkins and nightshade first, pump them through Kegs for the value multiplier, and add enchanted crops once you've got a mana cushion. That's the loop. Everything below is the detail.",
@@ -357,7 +361,7 @@ multiplayer: {
   },
 
 "fishing-guide": {
-    slug: "fishing-guide", title: "Moonlight Peaks Fishing Guide — Rod, Fish Locations & Tips",
+    slug: "fishing-guide", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonlightPeaks_Pier01_4K-1024x576.jpg", imageAlt: "Moonlight Peaks pier and waterside area suitable for fishing and exploration", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Fishing Guide — Rod, Fish Locations & Tips",
     description: "How to get the fishing rod from Noel on Night 2, all fish species with spawn locations, rod upgrades, bite timing tips, and the best fish for gold.",
     h1: "Moonlight Peaks Fishing Guide", eyebrow: "Fishing basics", updated: "2026-07-13",
     answer: "Fishing opens on Night 2 when Noel hands you a rod by the river. It's one of the earliest side systems and it slots neatly into your nightly route — fish between crop cycles and job board runs. The basic rod catches small fish only; upgrade to Premium for the big earners like Hammerhead Shark and Furybud. And here's a trick that saves hours: reel slightly to scare away fish you don't want instead of wasting time on them.",
@@ -390,7 +394,7 @@ multiplayer: {
   },
 
 "steam-deck": {
-    slug: "steam-deck", title: "Moonlight Peaks Steam Deck — Performance, Settings & Known Issues",
+    slug: "steam-deck", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonLightPeaks_TownHallGarden01_QHD-1024x576.jpg", imageAlt: "Moonlight Peaks town hall garden scene with paths, flowers, and a gothic village atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "Moonlight Peaks Steam Deck — Performance, Settings & Known Issues",
     description: "How Moonlight Peaks runs on Steam Deck: latest-check compatibility status, guide-reported settings, battery observations, loading, and text-size issues.",
     h1: "Moonlight Peaks on Steam Deck", eyebrow: "Handheld performance", updated: "2026-07-13",
     answer: "Steam lists Moonlight Peaks as Deck Verified. Independent testers are less enthusiastic — Steam Deck HQ reports long loading screens, small UI text, stutter, and crashes. The short version: it runs, but it's not a smooth Deck experience yet. Try the demo on your Deck before buying if handheld is your primary platform.",
@@ -415,7 +419,7 @@ multiplayer: {
   },
 
 "games-like-moonlight-peaks": {
-    slug: "games-like-moonlight-peaks", title: "10 Games Like Moonlight Peaks — Similar Cozy Farming Sims",
+    slug: "games-like-moonlight-peaks", image: "https://www.moonlightpeaks.com/wp-content/uploads/2026/01/MoonlightPeaks_Forest02_Winter_QHD-1024x569.png", imageAlt: "Moonlight Peaks winter forest exploration scene with a mysterious nighttime atmosphere", imageCredit: "Official website screenshot", imageSourceUrl: "https://www.moonlightpeaks.com/", title: "10 Games Like Moonlight Peaks — Similar Cozy Farming Sims",
     description: "Love Moonlight Peaks? Here's what to play next — 10 farming sims with romance, magic, crafting, and town-building, matched by what you actually enjoy most.",
     h1: "Games Like Moonlight Peaks", eyebrow: "What to play next", updated: "2026-07-13",
     answer: "Finished Moonlight Peaks and want more? Wylde Flowers is the natural next step if you loved the witchy romance. Stardew Valley is endless if you're chasing farming depth. Sun Haven is the closest aesthetic match — supernatural farming with RPG combat. Pick based on what hooked you, not a generic Top 10 list.",
