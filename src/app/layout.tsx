@@ -20,9 +20,6 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Moonlight Peaks Guide – Romance, Gifts, Money, Spells & Beginner Tips",
-    description: siteConfig.description,
-    url: siteConfig.url,
     type: "website",
     locale: "en_US",
     siteName: siteConfig.siteName,
@@ -30,8 +27,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Moonlight Peaks Guide – Romance, Gifts, Money, Spells & Beginner Tips",
-    description: siteConfig.description,
     images: [siteConfig.defaultSocialImage],
   },
   robots: {
