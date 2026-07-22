@@ -9,7 +9,7 @@ import { getGuide, type Guide } from "@/data/guides";
 import { absoluteUrl, resolveAssetUrl, siteConfig } from "@/lib/site-config";
 
 export default function GuidePage({ guide }: { guide: Guide }) {
-  const pageUrl = absoluteUrl(`/${guide.slug}/`);
+  const pageUrl = absoluteUrl(`/${guide.slug}`);
   const heroImage = guide.image ?? siteConfig.defaultSocialImage;
   const heroImageUrl = resolveAssetUrl(heroImage);
   const articleImage = resolveAssetUrl(guide.image ?? siteConfig.defaultSocialImage);

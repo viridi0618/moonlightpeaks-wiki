@@ -5,7 +5,7 @@ import type { Guide } from "@/data/guides";
 
 export default function GuideCard({ guide }: { guide: Guide }) {
   return (
-    <Link href={`/${guide.slug}/`} className="group rounded-2xl border border-[#3b2a56] bg-gradient-to-br from-[#171026] to-[#0d0917] p-6 shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:border-[#8d67b5]">
+    <Link href={`/${guide.slug}`} className="group rounded-2xl border border-[#3b2a56] bg-gradient-to-br from-[#171026] to-[#0d0917] p-6 shadow-lg shadow-black/10 transition hover:-translate-y-1 hover:border-[#8d67b5]">
       {guide.image && (
         <img
           src={guide.image}

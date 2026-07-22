@@ -46,8 +46,8 @@ export default function Home() {
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#ded5e5]">Practical, source-aware answers for the first week, romance routes, gifts, money, spells, farming, fishing, platform support, and tricky quest locations.</p>
             <p className="mt-5 max-w-2xl text-sm leading-6 text-[#b8afc8]">Moonlight Peaks Guide is an unofficial fan-made resource and is not affiliated with the developer, publishers, or platform holders.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/beginner-guide/" className="rounded-full bg-[#e2c27a] px-6 py-3 text-sm font-bold text-[#160d22] transition hover:bg-[#f3dda7]">Start the beginner guide</Link>
-              <Link href="/romance-guide/" className="rounded-full border border-[#8d67b5] bg-[#160f24]/80 px-6 py-3 text-sm font-bold text-[#f5f0e8] transition hover:border-[#e2c27a]">Explore romance</Link>
+              <Link href="/beginner-guide" className="rounded-full bg-[#e2c27a] px-6 py-3 text-sm font-bold text-[#160d22] transition hover:bg-[#f3dda7]">Start the beginner guide</Link>
+              <Link href="/romance-guide" className="rounded-full border border-[#8d67b5] bg-[#160f24]/80 px-6 py-3 text-sm font-bold text-[#f5f0e8] transition hover:border-[#e2c27a]">Explore romance</Link>
             </div>
           </div>
         </div>
