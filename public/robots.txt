@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://moonlightpeaksguide.wiki/sitemap.xml
-
-# IndexNow
-Host: https://moonlightpeaksguide.wiki

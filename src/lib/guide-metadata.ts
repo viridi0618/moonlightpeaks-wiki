@@ -3,7 +3,7 @@ import type { Guide } from "@/data/guides";
 import { siteConfig } from "@/lib/site-config";
 
 export function guideMetadata(guide: Guide): Metadata {
-  const path = `/${guide.slug}/`;
+  const path = `/${guide.slug}`;
   return {
     title: { absolute: guide.title },
     description: guide.description,
