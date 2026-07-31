@@ -27,6 +27,7 @@ export default function Footer() {
           <span className="text-[#82798f]">More game guides:</span>
           <a href="https://stealabrainrotguide.wiki" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2c27a] transition">Steal a Brainrot Wiki</a>
           <a href="https://gutsandblackpowder.wiki" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2c27a] transition">Guts &amp; Blackpowder Wiki</a>
+          <a href="https://mistfallhuntergg.wiki" target="_blank" rel="noopener noreferrer" className="hover:text-[#e2c27a] transition">Mistfall Hunter Guide</a>
         </div>
         <div className="mt-10 flex flex-col gap-3 border-t border-[#2f2342] pt-6 text-xs text-[#82798f] sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} {siteConfig.shortName}. Unofficial fan resource.</span>
